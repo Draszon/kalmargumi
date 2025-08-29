@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+    <script src="{{ asset('js/app.js') }}"></script>
+
     <title>@yield('title', 'Kalmár Gumiszerviz Kft')</title>
 </head>
 <body class="inter-text-font">
@@ -33,17 +35,27 @@
             </div>
         </div>
 
-        <div class="hamburger-icon">
+        <div class="hamburger-icon" id="hamburger-icon">
             <img class="mobile-nav-icon" src="{{ asset('images/nav_icons/hamburger-menu.svg') }}" alt="hamburger menu ikon">
         </div>
+
+        <nav class="desktop-menu">
+            <ul>
+                <li class="nav-item desktop-nav-item">főoldal</li>
+                <li class="nav-item desktop-nav-item">szolgáltatásaink</li>
+                <li class="nav-item desktop-nav-item">áraink</li>
+                <li class="nav-item desktop-nav-item">rólunk</li>
+                <li class="nav-item desktop-nav-item">kapcsolat</li>
+            </ul>
+        </nav>
     </div>
-    <nav class="mobile-nav-wrapper">
+    <nav class="mobile-nav-wrapper" id="mobile-nav">
         <ul>
-            <li class="nav-item">főoldal</li>
-            <li class="nav-item">szolgáltatásaink</li>
-            <li class="nav-item">áraink</li>
-            <li class="nav-item">rólunk</li>
-            <li class="nav-item">kapcsolat</li>
+            <li class="nav-item nav-border">főoldal</li>
+            <li class="nav-item nav-border">szolgáltatásaink</li>
+            <li class="nav-item nav-border">áraink</li>
+            <li class="nav-item nav-border">rólunk</li>
+            <li class="nav-item nav-border">kapcsolat</li>
         </ul>
     </nav>
 
@@ -88,7 +100,7 @@
                 </div>
             </div>
             <div class="copyright-footer-container footer-section">
-                <p>© 2025 Kalmár Gumiszervíz</p>
+                <p>© <span id="footer-date"></span> Kalmár Gumiszervíz</p>
                 <p>Minden jog fenntartva.</p>
                 <p>Powered by Peter</p>
             </div>
