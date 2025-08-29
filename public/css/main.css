@@ -32,6 +32,12 @@ body {
     "YTLC" 500;
 }
 
+.section {
+    padding: 40px 10px;
+}
+
+
+/* NAVIGATION SECTION */
 .mobile-nav-icon {
     height: 50px;
 }
@@ -39,6 +45,8 @@ body {
 .logo-image {
     height: 50px;
     margin-right: -10px;
+    transform: scaleX(-1);
+    z-index: 1;
 }
 
 .header-navigation-wrapper {
@@ -62,6 +70,7 @@ body {
     font-size: 0.7rem;
     text-shadow: -2px -2px white;
     font-weight: 700 !important;
+    z-index: 2;
 }
 
 .logo-main-title {
@@ -89,3 +98,34 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, 0.182);
     font-weight: 500;
 }
+
+/* NAVIGATION SECTION */
+
+
+/* FOOTER SECTION */
+
+footer {
+    background-color: var(--light-section-bg);
+    font-size: 0.8rem;
+    line-height: 15px;
+}
+
+.footer-section {
+    margin-bottom: 30px;
+}
+
+.footer-section-title {
+    font-weight: 600;
+}
+
+.footer-section-title,
+.contact,
+.openings-footer {
+    margin-bottom: 5px;
+}
+
+.copyright-footer-container {
+    margin-bottom: 0;
+}
+
+/* FOOTER SECTION */

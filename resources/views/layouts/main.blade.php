@@ -40,7 +40,7 @@
     <nav class="mobile-nav-wrapper">
         <ul>
             <li class="nav-item">főoldal</li>
-            <li class="nav-item">szolgáltatások</li>
+            <li class="nav-item">szolgáltatásaink</li>
             <li class="nav-item">áraink</li>
             <li class="nav-item">rólunk</li>
             <li class="nav-item">kapcsolat</li>
@@ -50,5 +50,49 @@
     <main>
         @yield('content')
     </main>
+
+    <footer class="section">
+        <div class="footer-wrapper">
+            <div class="contact-footer-container footer-section">
+                <p class="footer-section-title">Elérhetőségek</p>
+                <div class="contacts-footer">
+                    <div class="contact">
+                        <p>Telefon</p>
+                        <p>+36 36/560-231</p>
+                    </div>
+                    <div class="contact">
+                        <p>Mobil</p>
+                        <p>+36 30/279-7793</p>
+                    </div>
+                    <div class="contact">
+                        <p>info@autogumiexpo.hu</p>
+                    </div>
+                    <div class="contact">
+                        <p>3300 Eger, Árpád utca 39.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="openings-footer-container footer-section">
+                <p class="footer-section-title">Nyitvatartás</p>
+                <div class="openings-footer">
+                    <p>Hétfő-Péntek</p>
+                    <p>7:30 - 17:00</p>
+                </div>
+                <div class="openings-footer">
+                    <p>Szombat</p>
+                    <p>7:30 - 12:00</p>
+                </div>
+                <div class="openings-footer">
+                    <p>Vasárnap</p>
+                    <p>Zárva</p>
+                </div>
+            </div>
+            <div class="copyright-footer-container footer-section">
+                <p>© 2025 Kalmár Gumiszervíz</p>
+                <p>Minden jog fenntartva.</p>
+                <p>Powered by Peter</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
