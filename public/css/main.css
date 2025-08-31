@@ -1,6 +1,6 @@
 :root {
     --background-color: hsl(0, 0%, 95%);
-    --dark-text-color: hsl(212, 57%, 24%);
+    --dark-text-color: #1a3b60;
     --light-text-color: hsl(0, 0%, 91%);
     --light-section-bg: hsl(0, 0%, 87%);
     --dark-section-bg: hsl(217, 15%, 17%);
@@ -13,6 +13,7 @@ body {
   background-color: var(--background-color);
   color: var(--dark-text-color);
   font-size: 1rem;
+  line-height: 1.6rem;
 }
 
 .inter-text-font {
@@ -91,17 +92,30 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    display: none;
-    max-height: 0;
+    height: 0;
     overflow: hidden;
-    transition: max-height .3s ease;
+    transition: heigh .5s ease-in;
+    position: absolute;
+    top: 50px;
+    transition: height .4s ease-out;
 }
 
 .mobile-nav-wrapper.open {
-    max-height: 250px;
+    height: 300px;
+    transition: height .4s ease-in;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.182);
+    border-radius: 0 0 20px 20px;
 }
 
+.mobile-menu-icon {height: 25px;}
+
+.mobile-nav-icon {height: 50px;}
+
 .nav-item {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
     margin: 10px 0;
     padding: 10px 0;
     font-weight: 500;

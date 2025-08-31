@@ -35,27 +35,27 @@
             </div>
         </div>
 
-        <div class="hamburger-icon" id="hamburger-icon">
+        <div class="hamburger-icon">
             <img class="mobile-nav-icon" src="{{ asset('images/nav_icons/hamburger-menu.svg') }}" alt="hamburger menu ikon">
         </div>
 
         <nav class="desktop-menu">
             <ul>
                 <li class="nav-item desktop-nav-item">főoldal</li>
-                <li class="nav-item desktop-nav-item">szolgáltatásaink</li>
+                <li class="nav-item desktop-nav-item">szolgáltatások</li>
                 <li class="nav-item desktop-nav-item">áraink</li>
                 <li class="nav-item desktop-nav-item">rólunk</li>
                 <li class="nav-item desktop-nav-item">kapcsolat</li>
             </ul>
         </nav>
     </div>
-    <nav class="mobile-nav-wrapper" id="mobile-nav">
+    <nav class="mobile-nav-wrapper">
         <ul>
-            <li class="nav-item nav-border">főoldal</li>
-            <li class="nav-item nav-border">szolgáltatásaink</li>
-            <li class="nav-item nav-border">áraink</li>
-            <li class="nav-item nav-border">rólunk</li>
-            <li class="nav-item nav-border">kapcsolat</li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/home.svg') }}" alt="home button img">főoldal</li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/services.svg') }}" alt="">szolgáltatások</li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/price.svg') }}" alt="">áraink</li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/aboutme.svg') }}" alt="">rólunk</li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/contact.svg') }}" alt="">kapcsolat</li>
         </ul>
     </nav>
 

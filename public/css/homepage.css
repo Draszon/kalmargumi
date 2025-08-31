@@ -1,1 +1,36 @@
+/* SERVICES INTRODUCTION */
 
+.index-section-wrapper {background-color: var(--light-section-bg);}
+
+.index-content img {
+    height: 200px;
+    border-radius: 20px;
+}
+
+.index-arrows {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+.index-arrows img {
+    height: 25px;
+}
+
+.index-content > div { margin: 20px 0; }
+
+.home-service-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* SERVICES INTRODUCTION */
+
+
+/* VALUES SECTION */
+
+.value-card img {height: 163px;}
+
+/* VALUES SECTION */

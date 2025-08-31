@@ -1,28 +1,21 @@
 "user strict";
 
 document.addEventListener("DOMContentLoaded", () => {
+    //footer évszám megjelenítése
     const dateElement = document.getElementById("footer-date");
-    const hamburgerIcon = document.getElementById("hamburger-icon");
-    const mobileNav = document.getElementById("mobile-nav");
     
     const date = new Date();
     dateElement.innerHTML = date.getFullYear();
 
-    let isOpen = true;
+    //mobil nézet menüje
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+    const mobileNav = document.querySelector('.mobile-nav-wrapper');
+    const mobileMenus = document.querySelectorAll('.nav-toggleopen');
 
-    hamburgerIcon.addEventListener("click", () => {
+    const toggleMenu = () => {
+       mobileNav.classList.toggle('open');
+    }
 
-        mobileNav.classList.toggle("open");
-
-        /*if (isOpen) {
-            mobileNav.style.display = "block"
-            mobileNav.style.height = "250px";
-            isOpen = false;
-        } else {
-            mobileNav.style.display = "none"
-            mobileNav.style.height = "0px";
-            isOpen = true;
-        }*/
-        
-    });
+    hamburgerIcon.addEventListener("click", toggleMenu);
+    mobileMenus.forEach(item => item.addEventListener("click", toggleMenu));
 });
