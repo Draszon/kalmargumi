@@ -37,6 +37,8 @@ body {
     padding: 40px 10px;
 }
 
+h2 {font-size: 2.25rem;}
+
 
 /* NAVIGATION SECTION */
 .mobile-nav-icon {
@@ -117,7 +119,7 @@ body {
     gap: 10px;
     align-items: center;
     margin: 10px 0;
-    padding: 10px 0;
+    padding: 10px 10px;
     font-weight: 500;
 }
 
