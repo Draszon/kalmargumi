@@ -2,7 +2,7 @@
 
 .index-section-wrapper {background-color: var(--light-section-bg);}
 
-.index-content img {
+.section-img img {
     height: 200px;
     border-radius: 20px;
 }
@@ -14,8 +14,9 @@
     gap: 50px;
 }
 
-.index-arrows img {
-    height: 25px;
+.arrows {
+    height: 30px;
+    cursor: pointer;
 }
 
 .index-content > div { margin: 20px 0; }
@@ -24,6 +25,24 @@
     font-weight: 600;
     font-size: 1.2rem;
     margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .index-content {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        gap: 20px;
+
+    }
+
+    .index-content > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .index-content {max-width: 950px;}
 }
 
 /* SERVICES INTRODUCTION */
@@ -55,6 +74,122 @@
 
 /* GALERY SECTION */
 
+.galery-section-wrapper {
+    background-color: var(--light-section-bg);
+}
 
+.galery-arrows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin: 20px 0;
+}
 
 /* GALERY SECTION */
+
+
+/* TIPS AND TRICKS */
+
+.tips-title {
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+}
+
+.tips-tips {margin: 30px 0;}
+
+.tips-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tip-wrapper {
+    height: 430px;
+    background-color: var(--dark-section-bg);
+    color: var(--light-text-color);
+    padding: 30px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.tip-title {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.tips-icon {
+    height: 100px;
+    margin: 30px 0;
+}
+
+/* TIPS AND TRICKS */
+
+
+/* PARTNERS */
+
+.partners-wrapper {
+    background-color: var(--light-section-bg);
+}
+
+.partners {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.partners img {
+    width: 200px;
+}
+
+/* PARTNERS */
+
+
+/* ABOUT ME */
+
+.aboutme-text {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.aboutme-writer {
+    text-align: center;
+}
+
+/* ABOUT ME */
+
+
+/* OUR-GOALS */
+
+.our-goals-container {
+    background-color: var(--dark-section-bg);
+    border-radius: 30px;
+    color: var(--light-text-color);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.goals-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter {
+    font-size: 2rem;
+}
+/* OUR-GOALS */

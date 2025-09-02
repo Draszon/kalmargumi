@@ -26,29 +26,32 @@
     <title>@yield('title', 'Kalmár Gumiszerviz Kft')</title>
 </head>
 <body class="inter-text-font">
-    <div class="header-navigation-wrapper">
-        <div class="nav-logo">
-            <img class="logo-image" src="{{ asset('images/nav_icons/tire_logo.png') }}" alt="logó gumi">
-            <div class="logo-title">
-                <p class="logo-main-title nunito-sans-title-font">Kalmár</p>
-                <p class="logo-title nunito-sans-title-font">Gumiszerviz Kft</p>
+    <div class="nav-section">
+        <div class="header-navigation-wrapper">
+            <div class="nav-logo">
+                <img class="logo-image" src="{{ asset('images/nav_icons/tire_logo.png') }}" alt="logó gumi">
+                <div class="logo-title">
+                    <p class="logo-main-title nunito-sans-title-font">Kalmár</p>
+                    <p class="logo-title nunito-sans-title-font">Gumiszerviz Kft</p>
+                </div>
             </div>
-        </div>
 
-        <div class="hamburger-icon">
-            <img class="mobile-nav-icon" src="{{ asset('images/nav_icons/hamburger-menu.svg') }}" alt="hamburger menu ikon">
-        </div>
+            <div class="hamburger-icon">
+                <img class="mobile-nav-icon" src="{{ asset('images/nav_icons/hamburger-menu.svg') }}" alt="hamburger menu ikon">
+            </div>
 
-        <nav class="desktop-menu">
-            <ul>
-                <li class="nav-item desktop-nav-item">főoldal</li>
-                <li class="nav-item desktop-nav-item">szolgáltatások</li>
-                <li class="nav-item desktop-nav-item">áraink</li>
-                <li class="nav-item desktop-nav-item">rólunk</li>
-                <li class="nav-item desktop-nav-item">kapcsolat</li>
-            </ul>
-        </nav>
+            <nav class="desktop-menu">
+                <ul>
+                    <li class="nav-item desktop-nav-item">főoldal</li>
+                    <li class="nav-item desktop-nav-item">szolgáltatások</li>
+                    <li class="nav-item desktop-nav-item">áraink</li>
+                    <li class="nav-item desktop-nav-item">rólunk</li>
+                    <li class="nav-item desktop-nav-item">kapcsolat</li>
+                </ul>
+            </nav>
+        </div>        
     </div>
+
     <nav class="mobile-nav-wrapper">
         <ul>
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/home.svg') }}" alt="home button img">főoldal</li>
@@ -64,7 +67,7 @@
     </main>
 
     <footer class="section">
-        <div class="footer-wrapper">
+        <div class="footer-wrapper wrapper">
             <div class="contact-footer-container footer-section">
                 <p class="footer-section-title">Elérhetőségek</p>
                 <div class="contacts-footer">

@@ -1,6 +1,6 @@
 :root {
     --background-color: hsl(0, 0%, 95%);
-    --dark-text-color: #1a3b60;
+    --dark-text-color: hsl(212, 57%, 24%);
     --light-text-color: hsl(0, 0%, 91%);
     --light-section-bg: hsl(0, 0%, 87%);
     --dark-section-bg: hsl(217, 15%, 17%);
@@ -34,13 +34,30 @@ body {
 }
 
 .section {
-    padding: 40px 10px;
+    padding: 60px 10px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    max-width: 1200px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 35px;
 }
 
 h2 {font-size: 2.25rem;}
 
 
 /* NAVIGATION SECTION */
+.nav-section {
+    width: 100%;
+    background-color: var(--light-section-bg);
+}
+
 .mobile-nav-icon {
     height: 50px;
 }
@@ -57,7 +74,7 @@ h2 {font-size: 2.25rem;}
     flex-direction: row;
     justify-content: space-between;
     padding: 0 10px;
-    background-color: var(--light-section-bg);
+    margin: 0 auto;
 }
 
 .nav-logo {
@@ -74,6 +91,7 @@ h2 {font-size: 2.25rem;}
     text-shadow: -2px -2px white;
     font-weight: 700 !important;
     z-index: 2;
+    line-height: 15px;
 }
 
 .logo-main-title {
@@ -143,6 +161,13 @@ h2 {font-size: 2.25rem;}
 
 .disappear { display: none; }
 
+@media (min-width: 768px) {
+    .header-navigation-wrapper {
+        max-width: 1200px;
+    }
+}
+
+
 /* NAVIGATION SECTION */
 
 
@@ -150,8 +175,12 @@ h2 {font-size: 2.25rem;}
 
 footer {
     background-color: var(--light-section-bg);
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 15px;
+}
+
+.footer-wrapper {
+    text-align: center;
 }
 
 .footer-section {
@@ -165,11 +194,25 @@ footer {
 .footer-section-title,
 .contact,
 .openings-footer {
+    margin-bottom: 20px;
+}
+
+.contact > p,
+openings-footer > p {
     margin-bottom: 5px;
 }
 
 .copyright-footer-container {
     margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .footer-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
 }
 
 /* FOOTER SECTION */
