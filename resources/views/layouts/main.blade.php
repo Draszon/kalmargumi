@@ -42,11 +42,11 @@
 
             <nav class="desktop-menu">
                 <ul>
-                    <li class="nav-item desktop-nav-item">főoldal</li>
-                    <li class="nav-item desktop-nav-item">szolgáltatások</li>
-                    <li class="nav-item desktop-nav-item">áraink</li>
-                    <li class="nav-item desktop-nav-item">rólunk</li>
-                    <li class="nav-item desktop-nav-item">kapcsolat</li>
+                    <li class="nav-item desktop-nav-item"><a href="#">főoldal</a></li>
+                    <li class="nav-item desktop-nav-item"><a href="#">szolgáltatások</a></li>
+                    <li class="nav-item desktop-nav-item"><a href="#">áraink</a></li>
+                    <li class="nav-item desktop-nav-item"><a href="#">rólunk</a></li>
+                    <li class="nav-item desktop-nav-item"><a href="#">kapcsolat</a></li>
                 </ul>
             </nav>
         </div>        
@@ -54,11 +54,11 @@
 
     <nav class="mobile-nav-wrapper">
         <ul>
-            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/home.svg') }}" alt="home button img">főoldal</li>
-            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/services.svg') }}" alt="">szolgáltatások</li>
-            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/price.svg') }}" alt="">áraink</li>
-            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/aboutme.svg') }}" alt="">rólunk</li>
-            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/contact.svg') }}" alt="">kapcsolat</li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/home.svg') }}" alt="home button img"><a href="#">főoldal</a></li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/services.svg') }}" alt=""><a href="#">szolgáltatások</a></li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/price.svg') }}" alt=""><a href="#">áraink</a></li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/aboutme.svg') }}" alt=""><a href="#">rólunk</a></li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/contact.svg') }}" alt=""><a href="#">kapcsolat</a></li>
         </ul>
     </nav>
 
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <div class="openings-footer-container footer-section">
+            <div class="openings-footer-container footer-section middle">
                 <p class="footer-section-title">Nyitvatartás</p>
                 <div class="openings-footer">
                     <p>Hétfő-Péntek</p>

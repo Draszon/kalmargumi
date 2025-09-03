@@ -43,6 +43,10 @@
     }
 
     .index-content {max-width: 950px;}
+
+    .section-img img {
+        height: 300px;
+    }
 }
 
 /* SERVICES INTRODUCTION */
@@ -50,13 +54,16 @@
 
 /* VALUES SECTION */
 
-.cards-wrapper {margin: 50px 0;}
-
-.value-card img {height: 100px;}
+.value-card img {
+    height: 100px;
+    margin: 30px 0;
+}
 
 .value-card {
     text-align: center;
 }
+
+.value-card p {text-align: left;}
 
 .value-card.middle {
     margin: 50px 0;
@@ -66,7 +73,27 @@
     text-transform: uppercase;
     font-size: 1.5rem;
     font-weight: 500;
-    margin: 30px;
+    margin-top: 30px;
+}
+
+.values-text {
+    margin-top: 50px;
+}
+
+@media (min-width: 768px) {
+    .cards-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .value-card {max-width: 380px;}
+
+    .value-card.middle { margin: 0; }
+
+    .value-card img {height: 150px;}
+
+    .value-title {margin-top: 0 }
 }
 
 /* VALUES SECTION */
@@ -78,6 +105,8 @@
     background-color: var(--light-section-bg);
 }
 
+.section-img {text-align: center;}
+
 .galery-arrows {
     display: flex;
     flex-direction: row;
@@ -86,6 +115,12 @@
     gap: 50px;
     margin: 20px 0;
 }
+
+/*@media (min-width: 768px) {
+    .section-img img {
+        height: 400px;
+    }
+}*/
 
 /* GALERY SECTION */
 
@@ -102,13 +137,16 @@
 .tips-tips {margin: 30px 0;}
 
 .tips-container {
+    margin-top: 50px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
 }
 
 .tip-wrapper {
     height: 430px;
+    max-width: 400px;
     background-color: var(--dark-section-bg);
     color: var(--light-text-color);
     padding: 30px;
@@ -120,6 +158,8 @@
     text-align: center;
 }
 
+.tips-description {text-align: left;}
+
 .tip-title {
     font-weight: 500;
     font-size: 1.2rem;
@@ -128,6 +168,12 @@
 .tips-icon {
     height: 100px;
     margin: 30px 0;
+}
+
+@media (min-width: 768px) {
+    .tips-container {
+        gap: 100px;
+    }
 }
 
 /* TIPS AND TRICKS */
@@ -145,7 +191,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 30px;
-    gap: 20px;
+    gap: 80px;
 }
 
 .partners img {
@@ -177,8 +223,8 @@
     color: var(--light-text-color);
     padding: 40px 20px;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
+    justify-content: space-around;
     gap: 50px;
 }
 
@@ -187,9 +233,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 20px;
 }
 
 .counter {
     font-size: 2rem;
+
+}
+
+@media (min-width: 768px) {
+    .counter {
+        font-size: 2.5rem;
+    }
 }
 /* OUR-GOALS */

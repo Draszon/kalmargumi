@@ -18,7 +18,7 @@
 </section>
 
 <div class="divider">
-    <img src="{{ asset('images/index_section/divider.svg') }}" alt="szerkció határoló">
+    <img src="{{ asset('images/index_section/divider.svg') }}" alt="szekció határoló">
 </div>
 
 <section class="values-section-wrapper section">
@@ -26,19 +26,19 @@
         <div class="value-card">
             <h2 class="value-title">megbízhatóság</h2>
             <img src="{{ asset("images/values_section/shield.png") }}" alt="" class="value-logo">
+            <p>Szervizünkben mindig arra törekszünk, hogy ügyfeleink nyugodt szívvel bízzák ránk autójukat.</p>
         </div>
         <div class="value-card middle">
             <h2 class="value-title">gyorsaság</h2>
             <img src="{{ asset("images/values_section/lightning.png") }}" alt="" class="value-logo">
+            <p>Rövid határidőkkel, rugalmas időpontokkal és gyors munkavégzéssel segítünk, hogy autója mielőbb újra úton lehessen.</p>
         </div>
         <div class="value-card">
             <h2 class="value-title">szakértelem</h2>
             <img src="{{ asset("images/values_section/tools.png") }}" alt="" class="value-logo">
+            <p>Több éves tapasztalattal és modern technológiákkal biztosítjuk a legjobb megoldást minden helyzetben.</p>
         </div>
     </div>
-    <p class="values-text">
-        Cégünk többéves tapasztalattal áll az Ön rendelkezésére, hogy autója mindig biztonságosan és zökkenőmentesen közlekedhessen. A legmodernebb technológiával és szakértő csapattal végezzük el a gumiabroncsok cseréjét, javítását.
-    </p>
 </section>
 
 <section class="galery-section-wrapper section">
@@ -59,11 +59,8 @@
 <section class="tips-and-tricks-wrapper section">
     <div class="tips-wrapper wrapper">
         <h2 class="section-title">
-            Hasznos tanácsok és tippek a biztonságos közlekedéshez
+            Hasznos tippek és tanácsok a biztonságos közlekedéshez
         </h2>
-        <p class="tips-tips">
-            Gondoskodjon autójáról és a gumiabroncsairól egyszerű, de hatékony lépésekkel. Összegyűjtöttük a legfontosabb tippeket, hogy minden utazás kényelmes és problémamentes legyen.
-        </p>
         <div class="tips-container">
             <div class="tip-wrapper">
                 <h3 class="tip-title">Ellenőrizze a guminyomást rendszeresen</h3>
