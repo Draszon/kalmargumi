@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
+Route::view('/services', 'services')->name('services');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

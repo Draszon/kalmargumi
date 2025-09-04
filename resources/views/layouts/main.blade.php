@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/tab-icon.svg') }}">
+
     <script src="{{ asset('js/app.js') }}"></script>
 
     <title>@yield('title', 'Kalmár Gumiszerviz Kft')</title>
@@ -42,8 +44,8 @@
 
             <nav class="desktop-menu">
                 <ul>
-                    <li class="nav-item desktop-nav-item"><a href="#">főoldal</a></li>
-                    <li class="nav-item desktop-nav-item"><a href="#">szolgáltatások</a></li>
+                    <li class="nav-item desktop-nav-item"><a href="{{ route('home') }}">főoldal</a></li>
+                    <li class="nav-item desktop-nav-item"><a href="{{ route('services') }}">szolgáltatások</a></li>
                     <li class="nav-item desktop-nav-item"><a href="#">áraink</a></li>
                     <li class="nav-item desktop-nav-item"><a href="#">rólunk</a></li>
                     <li class="nav-item desktop-nav-item"><a href="#">kapcsolat</a></li>
@@ -54,8 +56,8 @@
 
     <nav class="mobile-nav-wrapper">
         <ul>
-            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/home.svg') }}" alt="home button img"><a href="#">főoldal</a></li>
-            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/services.svg') }}" alt=""><a href="#">szolgáltatások</a></li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/home.svg') }}" alt="home button img"><a href="{{ route('home') }}">főoldal</a></li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/services.svg') }}" alt=""><a href="{{ route('services') }}">szolgáltatások</a></li>
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/price.svg') }}" alt=""><a href="#">áraink</a></li>
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/aboutme.svg') }}" alt=""><a href="#">rólunk</a></li>
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/contact.svg') }}" alt=""><a href="#">kapcsolat</a></li>

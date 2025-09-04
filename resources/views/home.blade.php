@@ -34,7 +34,7 @@
             <p>Rövid határidőkkel, rugalmas időpontokkal és gyors munkavégzéssel segítünk, hogy autója mielőbb újra úton lehessen.</p>
         </div>
         <div class="value-card">
-            <h2 class="value-title">szakértelemmmm</h2>
+            <h2 class="value-title">szakértelem</h2>
             <img src="{{ asset("images/values_section/tools.png") }}" alt="" class="value-logo">
             <p>Több éves tapasztalattal és modern technológiákkal biztosítjuk a legjobb megoldást minden helyzetben.</p>
         </div>
