@@ -46,9 +46,9 @@
                 <ul>
                     <li class="nav-item desktop-nav-item"><a href="{{ route('home') }}">főoldal</a></li>
                     <li class="nav-item desktop-nav-item"><a href="{{ route('services') }}">szolgáltatások</a></li>
-                    <li class="nav-item desktop-nav-item"><a href="#">áraink</a></li>
-                    <li class="nav-item desktop-nav-item"><a href="#">rólunk</a></li>
-                    <li class="nav-item desktop-nav-item"><a href="#">kapcsolat</a></li>
+                    <li class="nav-item desktop-nav-item"><a href="{{ route('prices') }}">áraink</a></li>
+                    <li class="nav-item desktop-nav-item"><a href="{{ route('about') }}">rólunk</a></li>
+                    <li class="nav-item desktop-nav-item"><a href="{{ route('contact') }}">kapcsolat</a></li>
                 </ul>
             </nav>
         </div>        
@@ -58,9 +58,9 @@
         <ul>
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/home.svg') }}" alt="home button img"><a href="{{ route('home') }}">főoldal</a></li>
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/services.svg') }}" alt=""><a href="{{ route('services') }}">szolgáltatások</a></li>
-            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/price.svg') }}" alt=""><a href="#">áraink</a></li>
-            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/aboutme.svg') }}" alt=""><a href="#">rólunk</a></li>
-            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/contact.svg') }}" alt=""><a href="#">kapcsolat</a></li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/price.svg') }}" alt=""><a href="{{ route('prices') }}">áraink</a></li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/aboutme.svg') }}" alt=""><a href="{{ route('about') }}">rólunk</a></li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/contact.svg') }}" alt=""><a href="{{ route('contact') }}">kapcsolat</a></li>
         </ul>
     </nav>
 

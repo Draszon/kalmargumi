@@ -3,11 +3,11 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
-
+Route::view('/', 'home')->name('home');
 Route::view('/services', 'services')->name('services');
+Route::view('/prices', 'prices')->name('prices');
+Route::view('/about', 'about')->name('about');
+Route::view('/contact', 'contact')->name('contact');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

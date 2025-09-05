@@ -50,6 +50,10 @@ body {
     text-align: center;
 }
 
+h1 {
+    font-size: 25px;
+}
+
 h2 {font-size: 2.25rem;}
 
 a {
@@ -61,6 +65,10 @@ a {
 @media (min-width: 768px) {
     .section-title {
         font-size: 1.5rem;
+    }
+
+    .main-title {
+        font-size: 35px;
     }
 }
 
@@ -211,6 +219,10 @@ footer {
 }
 
 @media (min-width: 768px) {
+    .footer-section {
+        text-align: left;
+    }
+
     .footer-wrapper {
         display: flex;
         flex-direction: row;
