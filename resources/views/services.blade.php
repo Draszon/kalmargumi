@@ -49,7 +49,7 @@
 
     <div class="booking-wrapper">
         <div class="booking">
-            <a href="#">foglalj időpontot most!</a>
+            <a href="#">foglaljon időpontot most!</a>
         </div>
     </div>
 </section>
