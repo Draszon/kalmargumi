@@ -4,16 +4,16 @@
 <section class="index-section-wrapper section">
     <div class="index-content">
         <div class="section-img">
-            <img src="{{ asset("images/index_section/defekt.jpg") }}" alt="defekt">
+            <img id="service-img" src="" alt="defekt">
         </div>
         <div>
-            <h2 class="home-service-title">Gyors és tartós abroncsjavítás, hogy újra biztonságban közlekedhessen! </h2>
-            <p>Bármilyen típusú gumiabroncsot szakértő kezekkel javítunk, legyen szó kisebb sérülésről vagy komolyabb defektről. Mi gondoskodunk arról, hogy a javítás hosszú távon megbízható legyen, így nem kell aggódnia a biztonságos közlekedés miatt.</p>
+            <h2 class="home-service-title" id="main-service-title"></h2>
+            <p id="main-service-content"></p>
         </div>
     </div>
     <div class="index-arrows">
-        <img class="arrows" src="{{ asset("images/index_section/arrow-left.svg") }}" alt="arrow">
-        <img class="arrows" src="{{ asset("images/index_section/arrow-right.svg") }}" alt="arrow">
+        <img class="arrows" id="service-left" src="{{ asset("images/index_section/arrow-left.svg") }}" alt="arrow">
+        <img class="arrows" id="service-right" src="{{ asset("images/index_section/arrow-right.svg") }}" alt="arrow">
     </div>
 </section>
 
@@ -111,10 +111,8 @@
 <section class="aboutme-wrapper section">
     <div class="about-me-container wrapper">
         <h2 class="section-title">Rólunk mondták</h2>
-        <p class="aboutme-text">
-            ,,Korrekt, gyors kiszolgálás. Mindig segítőkészek, jó és kedvező árakkal dolgoznak. Maximálisan ajánlom mindenkinek őket.”
-        </p>
-        <p class="aboutme-writer">László</p>
+        <p class="aboutme-text" id="comment-content"></p>
+        <p class="aboutme-writer" id="comment-author"></p>
     </div>
 </section>
 

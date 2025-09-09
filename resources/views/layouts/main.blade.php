@@ -19,11 +19,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <link rel="icon" type="image/x-icon" href="{{ asset('images/tab-icon.svg') }}">
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
 
     <title>@yield('title', 'Kalmár Gumiszerviz Kft')</title>
 </head>

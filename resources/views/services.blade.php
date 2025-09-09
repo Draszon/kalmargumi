@@ -13,7 +13,24 @@
 
 <section class="services section">
     <div class="services-wrapper wrapper">
-        <div class="service">
+        @foreach ($services as $service)
+            <div class="service">
+                <div class="describe-section">
+                    <h3 class="service-title">{{ $service->title }}</h3>
+                    <p class="service-describe">{{ $service->content }}</p>
+                    <a class="services-btn" href="{{ route('prices') }}">Áraink</a>
+                </div>
+                <div class="service-img">
+                    <img src="{{ asset('images/services/' . $service->image) }}" alt="szervíz kép">
+                </div>
+            </div>            
+        @endforeach
+
+
+
+
+
+        <!--<div class="service">
             <div class="describe-section">
                 <h3 class="service-title">Abroncs csere</h3>
                 <p class="service-describe">Szezonális abroncs cseréje gyorsan és precízen, hogy biztonságosan vezethessen télen és nyáron egyaránt. Akár defektes gumik cseréjét is vállaljuk, rövid határidővel.</p>
@@ -44,7 +61,7 @@
             <div class="service-img">
                 <img src="{{ asset('images/services/defekt.jpg') }}" alt="szervíz kép">
             </div>
-        </div>
+        </div>-->
     </div>
 
     <div class="booking-wrapper">

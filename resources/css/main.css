@@ -5,6 +5,7 @@
     --light-section-bg: hsl(0, 0%, 87%);
     --dark-section-bg: hsl(217, 15%, 17%);
     --logo-color: hsl(353, 100%, 40%);
+    --light-price-bg: hsl(0, 0%, 92%);
 }
 
 * {box-sizing: border-box;}
