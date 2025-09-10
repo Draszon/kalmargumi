@@ -9,6 +9,7 @@ Route::view('/prices', 'prices')->name('prices');
 Route::view('/about', 'about')->name('about');
 Route::view('/contact', 'contact')->name('contact');
 
+Route::get('/getimage', [HomeController::class, 'getImage']);
 Route::get('/services', [HomeController::class, 'services'])->name('services');
 Route::get('/getservices', [HomeController::class, 'getServices']);
 Route::get('/getcomments', [HomeController::class, 'getComments']);

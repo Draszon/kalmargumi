@@ -44,7 +44,7 @@
 <section class="galery-section-wrapper section">
     <div class="photoes-wrapper wrapper">
         <div class="section-img">
-            <img src="{{ asset("images/galery_background.jpg") }}" alt="galéria">
+            <img id="galery-img" src="" alt="galéria képek">
         </div>
         <div class="galery-arrows">
             <img class="arrows" src="{{ asset("images/index_section/arrow-left.svg") }}" alt="nyilak">

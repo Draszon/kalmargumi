@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Galery;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -21,5 +22,10 @@ class HomeController extends Controller
     public function getComments() {
         $comments = Comment::all();
         return response()->json($comments);
+    }
+
+    public function getImage() {
+        $images = Galery::all();
+        return response()->json($images);
     }
 }
