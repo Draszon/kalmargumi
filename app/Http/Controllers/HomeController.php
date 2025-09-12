@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\Galery;
+use App\Models\Opening_hour;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -27,5 +28,10 @@ class HomeController extends Controller
     public function getImage() {
         $images = Galery::all();
         return response()->json($images);
+    }
+
+    public function getOpenings() {
+        $openings = Opening_hour::all();
+        return response()->json($openings);
     }
 }

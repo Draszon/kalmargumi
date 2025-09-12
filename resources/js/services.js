@@ -4,7 +4,7 @@
 async function getServices() {
     try {
         const response = await fetch('/getservices');
-        if (!response.ok) throw new error ('Hálózati hiba');
+        if (!response.ok) throw new Error ('Hálózati hiba');
         return await response.json();
     } catch (error) {
         console.log('Hiba történt szervizadatok lekérdezése közben!', error);
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async() => {
         }
 
         serviceRight.addEventListener("click", () => {
-            currentIndex += 1;
+            currentIndex++;
             if (currentIndex >= services.length) {
                 currentIndex = 0;
             }
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async() => {
         });
 
         serviceLeft.addEventListener("click", () => {
-            currentIndex -= 1;
+            currentIndex--;
             if (currentIndex < 0) {
                 currentIndex = services.length -1;
             }

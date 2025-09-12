@@ -3,7 +3,7 @@
 async function getComments() {
     try {
         const response = await fetch('/getcomments');
-        if (!response.ok) throw new error ('Hálózati hiba!');
+        if (!response.ok) throw new Error ('Hálózati hiba!');
         return await response.json();
     } catch (error) {
         console.log('Hiba a kommentek lekérdezése közben: ', error);

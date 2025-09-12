@@ -47,8 +47,8 @@
             <img id="galery-img" src="" alt="galéria képek">
         </div>
         <div class="galery-arrows">
-            <img class="arrows" src="{{ asset("images/index_section/arrow-left.svg") }}" alt="nyilak">
-            <img class="arrows" src="{{ asset("images/index_section/arrow-right.svg") }}" alt="nyilak">
+            <img class="arrows galery-arrow" data-id="1" src="{{ asset("images/index_section/arrow-left.svg") }}" alt="nyilak">
+            <img class="arrows galery-arrow" data-id="2" src="{{ asset("images/index_section/arrow-right.svg") }}" alt="nyilak">
         </div>
         <p class="galery-text">
             Galériánkban betekintést nyerhet abba, hogyan gondoskodunk ügyfeleink autóiról. Legyen szó gumicseréről, javításról vagy karbantartásról, nálunk minden a precizitásról és a minőségről szól.

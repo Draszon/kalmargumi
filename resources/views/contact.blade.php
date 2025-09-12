@@ -15,6 +15,35 @@
     <div class="wrapper contacts-info-wrapper">
         <h3 class="section-title">Vegye fel velünk a kapcsolatot</h3>
         <div class="contacts-container">
+
+            @foreach ($contacts as $contact)
+                <div class="contacts">
+                    <div class="contact-wrapper">
+                        <div class="info">
+                            <img src="{{ asset('images/contacts/phone.png') }}" alt="telefon" class="contact-logo">
+                            <p class="contact-text">{{ $contact->value }}</p>
+                        </div>
+                        <p class="text">{{ $contact->description }}</p>
+                    </div>
+                </div>
+            @endforeach
+            <div class="contacts opening">
+                <div class="contact-wrapper">
+                    <div class="info">
+                        <img src="{{ asset('images/contacts/open.png') }}" alt="telefon" class="contact-logo">
+                        <p class="contact-text">Nyitvatartás</p>
+                    </div>
+                    <div class="opening-hours">
+                        <p>{{ $openingH[0]->day }}</p>
+                        <p>{{ $openingH[0]->openinghour }}</p>
+                        <p>{{ $openingH[1]->day }}</p>
+                        <p>{{ $openingH[1]->openinghour }}</p>
+                    </div>
+                </div>
+            </div>
+                
+
+            <!--
             <div class="contacts">
                 <div class="contact-wrapper">
                     <div class="info">
@@ -42,15 +71,20 @@
                     <p class="text">Gumiszervizünk Eger szívében található, könnyen megközelíthető helyen, ahol mindig örömmel látjuk!</p>
                 </div>
             </div>
-            <div class="contacts">
+            <div class="contacts opening">
                 <div class="contact-wrapper">
                     <div class="info">
                         <img src="{{ asset('images/contacts/open.png') }}" alt="telefon" class="contact-logo">
                         <p class="contact-text">Nyitvatartás</p>
                     </div>
-                    <p class="text">Telefonszámunkon azonnal elér minket, és munkatársaink készséggel állnak rendelkezésére minden kérdésében!</p>
+                    <div class="opening-hours">
+                        <p>Hétfőtől - Péntekig:</p>
+                        <p>7:30 - 17:00</p>
+                        <p>Szombaton:</p>
+                        <p>7:30 - 12:00</p>
+                    </div>
                 </div>
-            </div>
+            </div>-->
         </div>
         
         <div class="map-container">
