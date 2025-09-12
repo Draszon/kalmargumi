@@ -73,34 +73,36 @@
                 <p class="footer-section-title">Elérhetőségek</p>
                 <div class="contacts-footer">
                     <div class="contact">
-                        <p>Telefon</p>
-                        <p>+36 36/560-231</p>
+                        <p>Telefon:</p>
+                        <p id="telephone"></p>
                     </div>
-                    <div class="contact">
+                    <!--<div class="contact">
                         <p>Mobil</p>
-                        <p>+36 30/279-7793</p>
+                        <p id="mobile"></p>
+                    </div>-->
+                    <div class="contact">
+                        <p>Email:</p>
+                        <p id="email"></p>
                     </div>
                     <div class="contact">
-                        <p>info@autogumiexpo.hu</p>
-                    </div>
-                    <div class="contact">
-                        <p>3300 Eger, Árpád utca 39.</p>
+                        <p>Címünk:</p>
+                        <p id="address"></p>
                     </div>
                 </div>
             </div>
             <div class="openings-footer-container footer-section middle">
                 <p class="footer-section-title">Nyitvatartás</p>
                 <div class="openings-footer">
-                    <p>Hétfő-Péntek</p>
-                    <p>7:30 - 17:00</p>
+                    <p id="monday"></p>
+                    <p id="monday-time"></p>
                 </div>
                 <div class="openings-footer">
-                    <p>Szombat</p>
-                    <p>7:30 - 12:00</p>
+                    <p id="saturday"></p>
+                    <p id="saturday-time"></p>
                 </div>
                 <div class="openings-footer">
-                    <p>Vasárnap</p>
-                    <p>Zárva</p>
+                    <p id="sunday"></p>
+                    <p id="sunday-time"></p>
                 </div>
             </div>
             <div class="copyright-footer-container footer-section">

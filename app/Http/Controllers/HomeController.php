@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Contact;
 use App\Models\Galery;
 use App\Models\Opening_hour;
 use App\Models\Service;
@@ -31,7 +32,20 @@ class HomeController extends Controller
     }
 
     public function getOpenings() {
-        $openings = Opening_hour::all();
-        return response()->json($openings);
+        $openings = $this->loadOpening();
+        $contacts = $this->loadContacts();
+
+        return response()->json([
+            'openings' => $openings,
+            'contacts' => $contacts
+        ]);
+    }
+
+    public function loadOpening() {
+        return Opening_hour::all();
+    }
+
+    public function loadContacts() {
+        return Contact::all();
     }
 }
