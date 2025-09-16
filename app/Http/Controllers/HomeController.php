@@ -32,20 +32,12 @@ class HomeController extends Controller
     }
 
     public function getOpenings() {
-        $openings = $this->loadOpening();
-        $contacts = $this->loadContacts();
+        $openings = Opening_hour::all();
+        $contacts = Contact::all();
 
         return response()->json([
             'openings' => $openings,
             'contacts' => $contacts
         ]);
-    }
-
-    public function loadOpening() {
-        return Opening_hour::all();
-    }
-
-    public function loadContacts() {
-        return Contact::all();
     }
 }

@@ -13,112 +13,23 @@
 
 <section class="section prices-section">
     <div class="wrapper prices-wrapper">
-        <div class="rim-fitting-container">
-            <div class="title-container">
-                <h4 class="prices-table-title">Lemez/alufelni szerelés (centírozással)</h4>
-            </div>
-            <div class="prices-row">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row lighter">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row lighter">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row lighter">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row lighter">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-        </div>
-
-        <div class="rim-fitting-container">
-            <div class="title-container">
-                <h4 class="prices-table-title">Komplett kerék le-fel szerelés (centírozással)</h4>
-            </div>
-            <div class="prices-row">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row lighter">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row lighter">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row lighter">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row lighter">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row">
-                <p class="services-name">Szgk 13"-14"</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-        </div>
-
-        <div class="rim-fitting-container">
-            <div class="title-container">
-                <h4 class="prices-table-title">Komplett kerék le-fel szerelés centírozás nélkül</h4>
-            </div>
-            <div class="prices-row">
-                <p class="services-name">16"-ig</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-            <div class="prices-row lighter">
-                <p class="services-name">17"-től</p>
-                <p class="services-prices">3400Ft/db</p>
-            </div>
-        </div>
         
+        @foreach ($categories as $category)
+            <div class="rim-fitting-container">
+                <div class="title-container">
+                    <h4 class="prices-table-title">{{ $category->name }}</h4>
+                </div>
+                
+                @foreach ($category->wheelsService as $services)
+                    <div class="prices-row">
+                        <p class="services-name">{{ $services->name }}</p>
+                        <p class="services-prices">{{ $services->price . ' ' . $services->unit }}</p>
+                    </div>
+                @endforeach
+
+            </div>
+        @endforeach
+
         <div class="service-info-container">
             <p>A nálunk vásárolt gumiabroncsnál a hulladékkezelési költséget nem számoljuk fel. Áraink az ÁFA-t tartalmazzák!</p>
             <p>A szerelés ára a szelepet nem tartalmazza!</p>

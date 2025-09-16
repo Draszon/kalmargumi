@@ -3,13 +3,14 @@
 use App\Http\Controllers\AboutmeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PriceController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
-Route::view('/prices', 'prices')->name('prices');
 Route::view('/contact', 'contact')->name('contact');
 
+Route::get('/prices', [PriceController::class, 'index'])->name('prices');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/about', [AboutmeController::class, 'index'])->name('about');
 Route::get('/getimage', [HomeController::class, 'getImage']);
