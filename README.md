@@ -1,6 +1,6 @@
 # Kalmár Gumiszerviz Kft. Weboldal
 
-Ez a projekt egy kis gumiszerviz számára készült weboldal, amely Laravel keretrendszert használ. Az oldal célja, hogy dinamikusan kezelje a szolgáltatásokat, árakat, galériát és nyitvatartási adatokat, mindezt modern, reszponzív felületen.
+Ez a projekt egy kis gumiszerviz számára készülő weboldal, amely Laravel keretrendszert használ. Az oldal célja, hogy dinamikusan kezelje a szolgáltatásokat, árakat, galériát és nyitvatartási adatokat, mindezt modern, reszponzív felületen.
 
 ---
 
