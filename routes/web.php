@@ -22,6 +22,7 @@ Route::get('/getcomments', [HomeController::class, 'getComments']);
 Route::get('/getopenings', [HomeController::class, 'getOpenings']);
 
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::post('/store-comment', [CommentController::class, 'storeComment'])->name('comment.store');
     Route::delete('/delete-comment/{id}', [CommentController::class, 'deleteComment'])->name('comment.delete');
     Route::delete('/image-delete/{id}', [GaleryController::class, 'deleteImage'])->name('image.delete');
     Route::post('/image-store', [GaleryController::class, 'storeImage'])->name('image.store');

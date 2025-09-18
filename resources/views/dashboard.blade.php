@@ -31,7 +31,7 @@
                                 @csrf
                                 <input type="file" name="galery-img" id="galery-img-upload">
                                 <p class="mb-4">Max méret: 1MB</p>
-                                <button class="bg-gray-200 px-5 py-2 rounded-md" type="submit">Kép feltöltése</button>
+                                <button class="w-40 mt-5 px-5 py-2 bg-gray-200 text-black hover:text-white font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200" type="submit">Kép feltöltése</button>
                                 @if (session('success'))
                                     <p class="text-green-800 font-medium">{{ session('success') }}</p>
                                 @endif
@@ -52,9 +52,9 @@
                 <div class="p-6 text-gray-800">
                     <h3 class="uppercase font-medium mb-5 text-xl">Vélemények szerkesztése</h3>
                     @foreach ($comments as $comment)
-                        <div class="py-2">                        
+                        <div class="py-2 border-b border-gray-300">                        
                             <p>{{ $comment->comment }}</p>
-                            <p>{{ $comment->author }}</p>
+                            <p class="my-2">{{ $comment->author }}</p>
                             <form action="{{ route('comment.delete', $comment->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
@@ -67,16 +67,20 @@
                     @if (session('comment-delete'))
                         <p class="text-green-800 font-medium">{{ session('comment-delete') }}</p>
                     @endif
-                    <div class="w-3xs">
-                        <p >Új komment feltöltése:</p>
-                        <form class="flex flex-col" action="#" method="post">
-                            <label for="comment">Komment</label>
-                            <textarea class="w-96" name="comment" id="comment"></textarea>
+                    <div>
+                        <p class="text-lg my-3 font-medium">Új komment feltöltése:</p>
+                        <form class="flex flex-col" action="{{ route('comment.store') }}" method="post">
+                            @csrf
+                            <label for="comment" class="font-medium">Komment:</label>
+                            <textarea class="w-72 h-32 mb-2 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 resize-none" name="comment" id="comment"></textarea>
 
-                            <label for="name">Név</label>
-                            <input type="text" name="name" id="name">
+                            <label for="name" class="font-medium">Név:</label>
+                            <input class="w-72 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" type="text" name="name" id="name">
 
-                            <button type="submit">Feltölt</button>
+                            <button class="w-40 mt-5 px-5 py-2 bg-gray-200 text-black hover:text-white font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200" type="submit">Feltölt</button>
+                            @if (session('successComment'))
+                                <p class="text-green-800 font-medium">{{ session('successComment') }}</p>
+                            @endif
                         </form>
                     </div>
                 </div>
