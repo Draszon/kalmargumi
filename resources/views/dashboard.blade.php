@@ -9,9 +9,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-800">
-                    <h3 class="uppercase font-medium">Galéria szerkesztése</h3>
+                    <h3 class="uppercase font-medium mb-5 text-xl">Galéria szerkesztése</h3>
                     <div>
-                        <div class="flex flex-wrap mt-5 gap-4 ">
+                        <div class="flex flex-wrap gap-4 ">
                             @foreach ($images as $image)
                                 <div class="flex-column shadow-lg rounded-md p-2">
                                     <img class=" w-48" src="{{ '/images/galery/' . $image->image }}" alt="{{ $image->image }}">
@@ -50,7 +50,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-800">
-                    <h3 class="uppercase font-medium">Vélemények szerkesztése</h3>
+                    <h3 class="uppercase font-medium mb-5 text-xl">Vélemények szerkesztése</h3>
                     @foreach ($comments as $comment)
                         <div class="py-2">                        
                             <p>{{ $comment->comment }}</p>
@@ -67,13 +67,16 @@
                     @if (session('comment-delete'))
                         <p class="text-green-800 font-medium">{{ session('comment-delete') }}</p>
                     @endif
-                    <div>
-                        <form action="#" method="post">
+                    <div class="w-3xs">
+                        <p >Új komment feltöltése:</p>
+                        <form class="flex flex-col" action="#" method="post">
                             <label for="comment">Komment</label>
-                            <textarea name="comment" id="comment"></textarea>
+                            <textarea class="w-96" name="comment" id="comment"></textarea>
 
                             <label for="name">Név</label>
                             <input type="text" name="name" id="name">
+
+                            <button type="submit">Feltölt</button>
                         </form>
                     </div>
                 </div>
