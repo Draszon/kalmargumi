@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutmeController;
+use App\Http\Controllers\Admin\GaleryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PriceController;
@@ -20,7 +21,9 @@ Route::get('/getcomments', [HomeController::class, 'getComments']);
 Route::get('/getopenings', [HomeController::class, 'getOpenings']);
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('/dashboard', 'dashboard')->name('dashboard');
+    Route::delete('/image-delete/{id}', [GaleryController::class, 'deleteImage'])->name('image.delete');
+    Route::post('/image-store', [GaleryController::class, 'storeImage'])->name('image.store');
+    Route::get('/dashboard', [GaleryController::class, 'getImages'])->name('dashboard');
     Route::view('/servicesedit', 'servicesedit')->name('services.edit');
     Route::view('/pricesedit', 'pricesedit')->name('pricesedit.edit');
     Route::view('/aboutmeedit', 'aboutmeedit')->name('aboutmeedit.edit');
