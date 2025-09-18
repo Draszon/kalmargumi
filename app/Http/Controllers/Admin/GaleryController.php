@@ -3,14 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
+use App\Models\Contact;
 use App\Models\Galery;
+use App\Models\Opening_hour;
 use Illuminate\Http\Request;
 
 class GaleryController extends Controller
 {
-    public function getImages() {
+    public function getAllData() {
         $images = Galery::all();
-        return view('dashboard', compact('images'));
+        $comments = Comment::all();
+        $openings = Opening_hour::all();
+        $contacts = Contact::all();
+        
+        return view('dashboard', compact('images', 'comments', 'openings', 'contacts'));
     }
 
     public function deleteImage($id) {
@@ -34,6 +41,6 @@ class GaleryController extends Controller
         $file->move(public_path('images/galery'), $filename);
 
         Galery::create(['image' => $filename]);
-        return back()->with('success', 'Sikertelen feltöltés!');
+        return back()->with('success', 'Sikeres képfeltöltés!');
     }
 }
