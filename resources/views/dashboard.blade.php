@@ -72,15 +72,35 @@
                         <form class="flex flex-col" action="{{ route('comment.store') }}" method="post">
                             @csrf
                             <label for="comment" class="font-medium">Komment:</label>
-                            <textarea class="w-72 h-32 mb-2 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 resize-none" name="comment" id="comment"></textarea>
+                            <textarea class="w-72 h-32 mb-2 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 resize-none" name="comment" id="comment"></textarea>
 
                             <label for="name" class="font-medium">Név:</label>
-                            <input class="w-72 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" type="text" name="name" id="name">
+                            <input class="w-72 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" type="text" name="name" id="name">
 
                             <button class="w-40 mt-5 px-5 py-2 bg-gray-200 text-black hover:text-white font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200" type="submit">Feltölt</button>
                             @if (session('successComment'))
                                 <p class="text-green-800 font-medium">{{ session('successComment') }}</p>
                             @endif
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-4">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-800">
+                    <h3 class="uppercase font-medium mb-5 text-xl">Elérhetőségek és nyitvatartási idő szerkesztése</h3>
+                    <div>
+                        <p class="font-medium">Nyitvatartás:</p>
+                        <form action="#" method="post">
+                            <div class="my-4">
+                                <input class="mb-2 md:mb-0 w-72 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" type="text" name="day" id="day" value="">
+                                <input class="w-72 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" type="text" name="hour" id="hour" value="">
+                            </div>
+                            <button type="submit" class="w-40 mt-5 px-5 py-2 bg-gray-200 text-black hover:text-white font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Módosít</button>
                         </form>
                     </div>
                 </div>
