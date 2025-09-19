@@ -92,17 +92,49 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-800">
-                    <h3 class="uppercase font-medium mb-5 text-xl">Elérhetőségek és nyitvatartási idő szerkesztése</h3>
+                    <h3 class="uppercase font-medium mb-5 text-xl">Nyitvatartási idő szerkesztése</h3>
                     <div>
                         <p class="font-medium">Nyitvatartás:</p>
-                        <form action="#" method="post">
+                        @foreach ($openings as $opening)
+                            <form action="{{ route('opening.edit', $opening->id) }}" method="post">
+                                @csrf
+                                @method('PUT')
+
+                                <div class="my-4">
+                                    <input type="text" name="day" value="{{ $opening->day }}" class="mb-2 md:mb-0 w-72 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                                    <input type="text" name="openinghour" value="{{ $opening->openinghour }}" class="w-72 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                                </div>
+                                <button type="submit" class="w-40 mt-5 px-5 py-2 bg-gray-200 text-black hover:text-white font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Módosít</button>
+                                @if (session('successOpening'))
+                                    <p class="text-green-800 font-medium">{{ session('successOpening') }}</p>
+                                @endif
+                                @if ($errors->has('errorOpening'))
+                                    <p class="text-red-500 font-medium">{{ $errors->first('errorOpening') }}</p>
+                                @endif
+                            </form>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-4">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-800">
+                    <h3 class="uppercase font-medium mb-5 text-xl">Elérhetőségek szerkesztése</h3>
+                    @foreach ($contacts as $contact)
+                        <form action="{{ route('contact.edit', $contact->id) }}" method="post">
+                            @csrf
+                            @method('PUT')
+
                             <div class="my-4">
-                                <input class="mb-2 md:mb-0 w-72 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" type="text" name="day" id="day" value="">
-                                <input class="w-72 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" type="text" name="hour" id="hour" value="">
+                                <input type="text" name="value" value="{{ $contact->value }}" class="mb-2 md:mb-0 w-72 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
                             </div>
                             <button type="submit" class="w-40 mt-5 px-5 py-2 bg-gray-200 text-black hover:text-white font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Módosít</button>
                         </form>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

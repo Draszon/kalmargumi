@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutmeController;
 use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\GaleryController;
+use App\Http\Controllers\Admin\OpeningController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PriceController;
@@ -22,6 +23,8 @@ Route::get('/getcomments', [HomeController::class, 'getComments']);
 Route::get('/getopenings', [HomeController::class, 'getOpenings']);
 
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::put('/edit-contacts/{id}', [ContactController::class, 'editContact'])->name('contact.edit');
+    Route::put('/edit-openings/{id}', [OpeningController::class, 'editOpening'])->name('opening.edit');
     Route::post('/store-comment', [CommentController::class, 'storeComment'])->name('comment.store');
     Route::delete('/delete-comment/{id}', [CommentController::class, 'deleteComment'])->name('comment.delete');
     Route::delete('/image-delete/{id}', [GaleryController::class, 'deleteImage'])->name('image.delete');
