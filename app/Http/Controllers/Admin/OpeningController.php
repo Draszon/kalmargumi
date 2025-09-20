@@ -17,6 +17,7 @@ class OpeningController extends Controller
         try {
             $openings = Opening_hour::findOrFail($id);
             $openings->update($validated);
+            
             return back()->with('successOpening', 'Sikeres módosítás!');
         } catch (\Exception $e) {
             return back()->withErrors([

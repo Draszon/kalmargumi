@@ -20,7 +20,18 @@
                 <div class="contacts">
                     <div class="contact-wrapper">
                         <div class="info">
-                            <img src="{{ asset('images/contacts/phone.png') }}" alt="telefon" class="contact-logo">
+                            @switch($contact->type)
+                                @case('phone')
+                                    <img src="{{ asset('images/contacts/phone.png') }}" alt="telefon" class="contact-logo">
+                                    @break
+                                @case('mail')
+                                    <img src="{{ asset('images/contacts/email.png') }}" alt="telefon" class="contact-logo">
+                                    @break
+                                @case('address')
+                                    <img src="{{ asset('images/contacts/location.png') }}" alt="telefon" class="contact-logo">
+                                    @break
+                                @default
+                            @endswitch
                             <p class="contact-text">{{ $contact->value }}</p>
                         </div>
                         <p class="text">{{ $contact->description }}</p>
@@ -41,50 +52,6 @@
                     </div>
                 </div>
             </div>
-                
-
-            <!--
-            <div class="contacts">
-                <div class="contact-wrapper">
-                    <div class="info">
-                        <img src="{{ asset('images/contacts/phone.png') }}" alt="telefon" class="contact-logo">
-                        <p class="contact-text">06 36/560-231</p>
-                    </div>
-                    <p class="text">Telefonszámunkon azonnal elér minket, és munkatársaink készséggel állnak rendelkezésére minden kérdésében!</p>
-                </div>
-            </div>
-            <div class="contacts">
-                <div class="contact-wrapper">
-                    <div class="info">
-                        <img src="{{ asset('images/contacts/email.png') }}" alt="telefon" class="contact-logo">
-                        <p class="contact-text">info@autogumiexpo.hu</p>
-                    </div>
-                    <p class="text">Írjon nekünk bizalommal, legyen szó időpontfoglalásról, ajánlatkérésről vagy általános érdeklődésről!</p>
-                </div>
-            </div>
-            <div class="contacts">
-                <div class="contact-wrapper">
-                    <div class="info">
-                        <img src="{{ asset('images/contacts/location.png') }}" alt="telefon" class="contact-logo">
-                        <p class="contact-text">3300 Eger, Árpád út 39.</p>
-                    </div>
-                    <p class="text">Gumiszervizünk Eger szívében található, könnyen megközelíthető helyen, ahol mindig örömmel látjuk!</p>
-                </div>
-            </div>
-            <div class="contacts opening">
-                <div class="contact-wrapper">
-                    <div class="info">
-                        <img src="{{ asset('images/contacts/open.png') }}" alt="telefon" class="contact-logo">
-                        <p class="contact-text">Nyitvatartás</p>
-                    </div>
-                    <div class="opening-hours">
-                        <p>Hétfőtől - Péntekig:</p>
-                        <p>7:30 - 17:00</p>
-                        <p>Szombaton:</p>
-                        <p>7:30 - 12:00</p>
-                    </div>
-                </div>
-            </div>-->
         </div>
         
         <div class="map-container">

@@ -13,7 +13,9 @@ async function getImages() {
 
 function renderImg(galery) {
     const galeryImage = document.getElementById('galery-img');
-    galeryImage.src = '/images/galery/' + galery.image;
+    if (galeryImage) {
+        galeryImage.src = '/images/galery/' + galery.image;
+    }
 }
 
 document.addEventListener("DOMContentLoaded", async() => {

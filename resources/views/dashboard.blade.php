@@ -10,6 +10,11 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-800">
                     <h3 class="uppercase font-medium mb-5 text-xl">Galéria szerkesztése</h3>
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                            <p class="text-red-500 font-medium text-lg">{{ $error }}</p>
+                        @endforeach
+                    @endif                    
                     <div>
                         <div class="flex flex-wrap gap-4 ">
                             @foreach ($images as $image)
@@ -35,9 +40,6 @@
                                 @if (session('success'))
                                     <p class="text-green-800 font-medium">{{ session('success') }}</p>
                                 @endif
-                                @error('galery-img')
-                                    <p class="text-red-500 font-medium">{{ $message }}</p>
-                                @enderror
                             </form>
                         </div>
                     </div>
@@ -70,12 +72,14 @@
                     <div>
                         <p class="text-lg my-3 font-medium">Új komment feltöltése:</p>
                         <form class="flex flex-col" action="{{ route('comment.store') }}" method="post">
+
+                            
                             @csrf
                             <label for="comment" class="font-medium">Komment:</label>
-                            <textarea class="w-72 h-32 mb-2 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 resize-none" name="comment" id="comment"></textarea>
+                            <textarea class="w-64 sm:w-96 h-32 mb-2 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 resize-none" name="comment" id="comment"></textarea>
 
                             <label for="name" class="font-medium">Név:</label>
-                            <input class="w-72 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" type="text" name="name" id="name">
+                            <input class="w-64 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" type="text" name="name" id="name">
 
                             <button class="w-40 mt-5 px-5 py-2 bg-gray-200 text-black hover:text-white font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200" type="submit">Feltölt</button>
                             @if (session('successComment'))
@@ -101,8 +105,8 @@
                                 @method('PUT')
 
                                 <div class="my-4">
-                                    <input type="text" name="day" value="{{ $opening->day }}" class="mb-2 md:mb-0 w-72 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
-                                    <input type="text" name="openinghour" value="{{ $opening->openinghour }}" class="w-72 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                                    <input type="text" name="day" value="{{ $opening->day }}" class="mb-2 md:mb-0 w-64 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                                    <input type="text" name="openinghour" value="{{ $opening->openinghour }}" class="w-64 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
                                 </div>
                                 <button type="submit" class="w-40 mt-5 px-5 py-2 bg-gray-200 text-black hover:text-white font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Módosít</button>
                                 @if (session('successOpening'))
@@ -130,11 +134,16 @@
                             @method('PUT')
 
                             <div class="my-4">
-                                <input type="text" name="value" value="{{ $contact->value }}" class="mb-2 md:mb-0 w-72 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                                <input type="text" name="value" value="{{ $contact->value }}" class="mb-2 md:mb-0 w-64 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
                             </div>
                             <button type="submit" class="w-40 mt-5 px-5 py-2 bg-gray-200 text-black hover:text-white font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Módosít</button>
                         </form>
                     @endforeach
+                    @if (session('successContact'))
+                        <p class="text-green-800 font-medium">{{ session('successContact') }}</p>
+                    @elseif ($errors->has('errorContact'))
+                        <p class="text-red-500 font-medium">{{ $errors->firs('errorContact') }}</p>
+                    @endif                    
                 </div>
             </div>
         </div>

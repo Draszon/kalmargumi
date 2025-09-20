@@ -19,6 +19,14 @@
                     <x-nav-link :href="route('services.edit')" :active="request()->routeIs('services.edit')">
                         {{ __('Szolgáltatások') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('aboutme.edit')" :active="request()->routeIs('aboutme.edit')">
+                        {{ __('Rólunk') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('prices.edit')" :active="request()->routeIs('proces.edit')">
+                        {{ __('Áraink') }}
+                    </x-nav-link>
                 </div>
             </div>
 
