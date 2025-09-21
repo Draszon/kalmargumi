@@ -33,21 +33,17 @@ document.addEventListener("DOMContentLoaded", async() => {
                 switch(id) {
                     case "1":
                         currentIndex--;
-                        if (currentIndex <= 0) {
+                        if (currentIndex <   0) {
                             currentIndex = img.length - 1;
-                            renderImg(img[currentIndex]);
-                        } else {
-                            renderImg(img[currentIndex]);
                         }
+                        renderImg(img[currentIndex]);
                         break;
                     case "2":
                         currentIndex++;
                         if (currentIndex > img.length - 1) {
                             currentIndex = 0;
-                            renderImg(img[currentIndex]);
-                        } else {
-                            renderImg(img[currentIndex]);
-                        }
+                            }
+                        renderImg(img[currentIndex]);
                         break;
                     default:
                         console.log("Hiba történt képváltás közben!");

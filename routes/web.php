@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutmeController;
 use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\EditAboutController;
 use App\Http\Controllers\Admin\editContactController;
+use App\Http\Controllers\Admin\EditPriceController;
 use App\Http\Controllers\Admin\GaleryController;
 use App\Http\Controllers\Admin\OpeningController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'home')->name('home');
 Route::view('/contact', 'contact')->name('contact');
 
+//publik oldalak, bárki számára megtekinthetőek
 Route::get('/prices', [PriceController::class, 'index'])->name('prices');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/about', [AboutmeController::class, 'index'])->name('about');
@@ -25,7 +27,10 @@ Route::get('/getservices', [HomeController::class, 'getServices']);
 Route::get('/getcomments', [HomeController::class, 'getComments']);
 Route::get('/getopenings', [HomeController::class, 'getOpenings']);
 
+//bejelentkezett felhasználók tekinthetik meg az oldalakat
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::put('/edit-category/{id}', [EditPriceController::class, 'editCategory'])->name('category.edit');
+
     Route::put('/edit-aboutme/{id}', [EditAboutController::class, 'editAbout'])->name('aboutmes.edit');
     Route::put('/edit-services/{id}', [ServiceController::class, 'editService'])->name('service.edit');
     Route::put('/edit-contacts/{id}', [editContactController::class, 'editContact'])->name('contact.edit');
@@ -38,8 +43,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/servicesedit', [ServiceController::class, 'getServices'])->name('services.edit');
     Route::get('/aboutmeedit', [EditAboutController::class, 'getAbout'])->name('aboutme.edit');
-
-    Route::view('/pricesedit', 'pricesedit')->name('prices.edit');
+    Route::get('/pricesedit', [EditPriceController::class, 'getPrices'])->name('prices.get');
 });
 
 Route::middleware('auth')->group(function () {

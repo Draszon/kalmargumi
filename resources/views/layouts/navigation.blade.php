@@ -24,7 +24,7 @@
                         {{ __('Rólunk') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('prices.edit')" :active="request()->routeIs('proces.edit')">
+                    <x-nav-link :href="route('prices.get')" :active="request()->routeIs('proces.edit')">
                         {{ __('Áraink') }}
                     </x-nav-link>
                 </div>
