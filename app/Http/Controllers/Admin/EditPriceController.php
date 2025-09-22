@@ -11,8 +11,8 @@ class EditPriceController extends Controller
 {
     public function getPrices () {
         $categories = Category::all();
-
-        return view('pricesedit', compact('categories'));
+        $wheelServices = WheelService::all();
+        return view('pricesedit', compact('categories', 'wheelServices'));
     }
 
     public function editCategory (Request $request) {
@@ -79,6 +79,35 @@ class EditPriceController extends Controller
         } catch (\Exception $e) {
             return back()->withErrors([
                 'errorService' => 'Hiba történt a nyitvatartási adatok frissítése közben: ', $e->getMessage(),
+            ])->withInput();
+        }
+    }
+
+    public function editService (Request $request) {
+        try {
+            foreach ($request->wheelservice as $wheelservice) {
+                $service = WheelService::find($wheelservice['id']);
+                $service->update([
+                    'name' => $wheelservice['name'],
+                ]);
+            }
+            return back()->with('successServiceEdit', 'Sikeres kategória módosítás!');
+        } catch (\Exception $e) {
+            return back()->withErrors([
+                'errorServiceEdit' => 'Hiba történt a szolgáltatások frissítése közben: ', $e->getMessage(),
+            ])->withInput();
+        }
+    }
+
+    public function deleteService (Request $request) {
+        $ids = $request->input('deleteService', []);
+
+        try {
+            WheelService::destroy($ids);
+            return back()->with('successServiceDelete', 'Sikeres szervíz törlés!');
+        } catch (\Exception $e) {
+            return back()->withErrors([
+                'errorServiceDelete' => 'Hiba a szerviz törlése közben: ' . $e->getMessage(),
             ])->withInput();
         }
     }

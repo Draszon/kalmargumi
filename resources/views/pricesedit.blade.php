@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="pt-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
@@ -75,40 +75,92 @@
                                 focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Feltöltés</button>
                         </form>
 
-                        <form action="{{ route('service.store') }}" method="post" class="flex flex-col">
-                            @csrf
-                            @method('PUT')
-                            <p>Új szolgáltatás feltöltése a kiválasztott kategóriához</p>
-                                <select name="category_id" class="
-                                    w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
-                                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-                                    transition duration-200">
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                    @endforeach
-                                </select>
-                                <p>Új szolgáltatás neve</p>
-                                <input type="text" name="name" class="
-                                    w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
-                                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-                                    transition duration-200">
-                                <p>Ára</p>
-                                <input type="text" name="price" class="
-                                    w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
-                                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-                                    transition duration-200">
-                                <p>Mértékegység</p>
-                                <input type="text" name="unit" class="
-                                    w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
-                                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-                                    transition duration-200">
-                                <button class="
-                                    w-40 px-5 py-2 mb-5 mt-2 bg-gray-200 text-black hover:text-white 
-                                    font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none
-                                    focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Feltöltés</button>                         
-                        </form>
+
                     </div>
                     
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pt-10">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <h3 class="text-lg mb-5">Szerviz szolgáltatások szerkesztése, törlése:</h3>
+                    @if (session('successServiceUpload'))
+                        <p class="text-green-800 font-medium">{{ session('successServiceUpload') }}</p>
+                    @endif
+                    <form action="{{ route('service.store') }}" method="post" class="flex flex-col mb-5">
+                        @csrf
+                        @method('PUT')
+                        <p>Új szolgáltatás feltöltése a kiválasztott kategóriához</p>
+                        <select name="category_id" class="
+                            w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
+                            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                            transition duration-200">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                        <p>Új szolgáltatás neve</p>
+                        <input type="text" name="name" class="
+                            w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
+                            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                            transition duration-200">
+                        <p>Ára</p>
+                        <input type="text" name="price" class="
+                            w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
+                            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                            transition duration-200">
+                        <p>Mértékegység</p>
+                        <input type="text" name="unit" class="
+                            w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
+                            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                            transition duration-200">
+                        <button class="
+                            w-40 px-5 py-2 mb-5 mt-2 bg-gray-200 text-black hover:text-white 
+                            font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none
+                            focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Feltöltés</button>                         
+                    </form>                    
+                    
+                    <form action="{{ route('wheelService.edit') }}" method="post" class="flex flex-wrap gap-2 mb-5">
+                        @if (session('successServiceEdit'))
+                            <p class="text-green-800 font-medium">{{ session('successServiceEdit') }}</p>
+                        @endif
+                        @csrf
+                        @method('PUT')
+                        @foreach ($wheelServices as $wheelService)
+                            <input type="hidden" name="wheelservice[{{ $wheelService->id }}][id]" value="{{ $wheelService->id }}">
+                            <input type="text" name="wheelservice[{{ $wheelService->id }}][name]" value="{{ $wheelService->name }}" class="
+                                w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
+                                focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                                transition duration-200">                            
+                        @endforeach
+                        <button class="
+                                w-40 px-5 py-2 mb-5 mt-2 bg-gray-200 text-black hover:text-white 
+                                font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none
+                                focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Módosítás</button>
+                    </form>
+
+                    <form action="{{ route('service.delete') }}" method="post" class="flex flex-col md:flex-row flex-wrap my-5">
+                        @if (session('successServiceDelete'))
+                            <p class="text-green-800 font-medium">{{ session('successServiceDelete') }}</p>
+                        @endif
+                        @csrf
+                        @method('DELETE')
+                        @foreach ($wheelServices as $wheelService)
+                            <div class="flex items-center mx-5">
+                                <input type="checkbox" name="deleteService[]" value="{{ $wheelService->id }}" class="
+                                    rounded-full text-red-600 bg-gray-100 border-gray-300 focus:ring-2 focus:ring-red-500 mr-3">
+                                <p>{{ $wheelService->name }}</p>
+                            </div>
+                        @endforeach
+                        <button class="
+                            w-40 px-5 py-2 mb-5 mt-2 bg-gray-200 text-black hover:text-white 
+                            font-medium rounded-lg shadow hover:bg-red-600 focus:outline-none
+                            focus:ring-2 focus:ring-red-400 focus:ring-offset-2 transition duration-200">Törlés</button>
+                    </form>
                 </div>
             </div>
         </div>

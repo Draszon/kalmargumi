@@ -31,8 +31,10 @@ Route::get('/getopenings', [HomeController::class, 'getOpenings']);
 //bejelentkezett felhasználók tekinthetik meg az oldalakat
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('/edit-category', [EditPriceController::class, 'editCategory'])->name('category.edit');
-    Route::put('add-category', [EditPriceController::class, 'storeCategory'])->name('category.store');
-    Route::put('store-service', [EditPriceController::class, 'storeService'])->name('service.store');
+    Route::put('/add-category', [EditPriceController::class, 'storeCategory'])->name('category.store');
+    Route::put('/store-service', [EditPriceController::class, 'storeService'])->name('service.store');
+    Route::put('/update-service', [EditPriceController::class, 'editService'])->name('wheelService.edit');
+    Route::delete('/delete-service', [EditPriceController::class, 'deleteService'])->name('service.delete');
 
     Route::delete('/delete-category', [EditPriceController::class, 'destroySelected'])->name('destroy.category');
     Route::put('/edit-aboutme/{id}', [EditAboutController::class, 'editAbout'])->name('aboutmes.edit');
