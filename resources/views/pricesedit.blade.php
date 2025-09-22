@@ -122,28 +122,11 @@
                             w-40 px-5 py-2 mb-5 mt-2 bg-gray-200 text-black hover:text-white 
                             font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none
                             focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Feltöltés</button>                         
-                    </form>                    
-                    
-                    <form action="{{ route('wheelService.edit') }}" method="post" class="flex flex-wrap gap-2 mb-5">
-                        @if (session('successServiceEdit'))
-                            <p class="text-green-800 font-medium">{{ session('successServiceEdit') }}</p>
-                        @endif
-                        @csrf
-                        @method('PUT')
-                        @foreach ($wheelServices as $wheelService)
-                            <input type="hidden" name="wheelservice[{{ $wheelService->id }}][id]" value="{{ $wheelService->id }}">
-                            <input type="text" name="wheelservice[{{ $wheelService->id }}][name]" value="{{ $wheelService->name }}" class="
-                                w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
-                                focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-                                transition duration-200">                            
-                        @endforeach
-                        <button class="
-                                w-40 px-5 py-2 mb-5 mt-2 bg-gray-200 text-black hover:text-white 
-                                font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none
-                                focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Módosítás</button>
                     </form>
-
+                    
+                    <p>Szerviztevékenység törlése:</p>
                     <form action="{{ route('service.delete') }}" method="post" class="flex flex-col md:flex-row flex-wrap my-5">
+                        
                         @if (session('successServiceDelete'))
                             <p class="text-green-800 font-medium">{{ session('successServiceDelete') }}</p>
                         @endif
@@ -160,6 +143,30 @@
                             w-40 px-5 py-2 mb-5 mt-2 bg-gray-200 text-black hover:text-white 
                             font-medium rounded-lg shadow hover:bg-red-600 focus:outline-none
                             focus:ring-2 focus:ring-red-400 focus:ring-offset-2 transition duration-200">Törlés</button>
+                    </form>
+                    
+                    <p>Árak módosítása:</p>
+                    <form action="{{ route('wheelService.edit') }}" method="post" class="flex flex-row flex-wrap gap-2 mb-5">
+                        
+                        @if (session('successServiceEdit'))
+                            <p class="text-green-800 font-medium">{{ session('successServiceEdit') }}</p>
+                        @endif
+                        @csrf
+                        @method('PUT')
+                        @foreach ($wheelServices as $wheelService)
+                        <div>
+                            <input type="hidden" name="wheelservice[{{ $wheelService->id }}][id]" value="{{ $wheelService->id }}">
+                            <p>{{ $wheelService->name }}</p>
+                            <input type="text" name="wheelservice[{{ $wheelService->id }}][price]" value="{{ $wheelService->price }}" class="
+                                w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
+                                focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                                transition duration-200">   
+                        </div>                         
+                        @endforeach
+                        <button class="
+                                w-40 px-5 py-2 mb-5 mt-2 bg-gray-200 text-black hover:text-white 
+                                font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none
+                                focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Módosítás</button>
                     </form>
                 </div>
             </div>

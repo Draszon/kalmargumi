@@ -31,7 +31,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
-    border-radius: 5px;
+    border-bottom: 1px solid rgb(223, 223, 223);
 }
 
 .lighter {background-color: var(--light-price-bg);}

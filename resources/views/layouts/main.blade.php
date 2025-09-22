@@ -108,7 +108,7 @@
             <div class="copyright-footer-container footer-section">
                 <p>© <span id="footer-date"></span> Kalmár Gumiszervíz</p>
                 <p>Minden jog fenntartva.</p>
-                <p>Powered by Peter</p>
+                <p>Powered by <a target="_blank" href="https://webpeter.hu">Peter</a></p>
             </div>
         </div>
     </footer>

@@ -88,13 +88,13 @@ class EditPriceController extends Controller
             foreach ($request->wheelservice as $wheelservice) {
                 $service = WheelService::find($wheelservice['id']);
                 $service->update([
-                    'name' => $wheelservice['name'],
+                    'price' => $wheelservice['price'],
                 ]);
             }
-            return back()->with('successServiceEdit', 'Sikeres kategória módosítás!');
+            return back()->with('successServiceEdit', 'Sikeres ár módosítás!');
         } catch (\Exception $e) {
             return back()->withErrors([
-                'errorServiceEdit' => 'Hiba történt a szolgáltatások frissítése közben: ', $e->getMessage(),
+                'errorServiceEdit' => 'Hiba történt az ár frissítése közben: ', $e->getMessage(),
             ])->withInput();
         }
     }
