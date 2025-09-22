@@ -29,7 +29,7 @@ Route::get('/getopenings', [HomeController::class, 'getOpenings']);
 
 //bejelentkezett felhasználók tekinthetik meg az oldalakat
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::put('/edit-category/{id}', [EditPriceController::class, 'editCategory'])->name('category.edit');
+    Route::put('/edit-category', [EditPriceController::class, 'editCategory'])->name('category.edit');
 
     Route::put('/edit-aboutme/{id}', [EditAboutController::class, 'editAbout'])->name('aboutmes.edit');
     Route::put('/edit-services/{id}', [ServiceController::class, 'editService'])->name('service.edit');
