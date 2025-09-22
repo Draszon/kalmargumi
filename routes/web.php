@@ -12,6 +12,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
@@ -30,7 +31,10 @@ Route::get('/getopenings', [HomeController::class, 'getOpenings']);
 //bejelentkezett felhasználók tekinthetik meg az oldalakat
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('/edit-category', [EditPriceController::class, 'editCategory'])->name('category.edit');
+    Route::put('add-category', [EditPriceController::class, 'storeCategory'])->name('category.store');
+    Route::put('store-service', [EditPriceController::class, 'storeService'])->name('service.store');
 
+    Route::delete('/delete-category', [EditPriceController::class, 'destroySelected'])->name('destroy.category');
     Route::put('/edit-aboutme/{id}', [EditAboutController::class, 'editAbout'])->name('aboutmes.edit');
     Route::put('/edit-services/{id}', [ServiceController::class, 'editService'])->name('service.edit');
     Route::put('/edit-contacts/{id}', [editContactController::class, 'editContact'])->name('contact.edit');
