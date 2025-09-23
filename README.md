@@ -21,6 +21,7 @@ Ez a projekt egy kis gumiszerviz számára készülő weboldal, amely Laravel ke
 - PHP 8.4
 - MariaDB
 - CSS
+- TailwindCSS
 - JS
 - Vite build rendszer
 

@@ -11,10 +11,19 @@ async function getImages() {
     }
 }
 
-function renderImg(galery) {
+function renderImg(galery, direction = "right") {
     const galeryImage = document.getElementById('galery-img');
+
     if (galeryImage) {
         galeryImage.src = '/images/galery/' + galery.image;
+        galeryImage.classList.remove('slide-in-right', 'slide-in-left');
+        void galeryImage.offsetWidth;
+
+        if (direction === "right") {
+            galeryImage.classList.add('slide-in-right');
+        } else {
+            galeryImage.classList.add('slide-in-left');
+        }
     }
 }
 
@@ -36,14 +45,14 @@ document.addEventListener("DOMContentLoaded", async() => {
                         if (currentIndex <   0) {
                             currentIndex = img.length - 1;
                         }
-                        renderImg(img[currentIndex]);
+                        renderImg(img[currentIndex], "left");
                         break;
                     case "2":
                         currentIndex++;
                         if (currentIndex > img.length - 1) {
                             currentIndex = 0;
                             }
-                        renderImg(img[currentIndex]);
+                        renderImg(img[currentIndex], "right");
                         break;
                     default:
                         console.log("Hiba történt képváltás közben!");
