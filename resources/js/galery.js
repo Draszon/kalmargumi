@@ -15,15 +15,15 @@ function renderImg(galery, direction = "right") {
     const galeryImage = document.getElementById('galery-img');
 
     if (galeryImage) {
-        galeryImage.src = '/images/galery/' + galery.image;
-        galeryImage.classList.remove('slide-in-right', 'slide-in-left');
+        galeryImage.classList.remove('animate-slideInRight', 'animate-slideInLeft');
         void galeryImage.offsetWidth;
-
         if (direction === "right") {
-            galeryImage.classList.add('slide-in-right');
+            galeryImage.classList.add('animate-slideInRight');
         } else {
-            galeryImage.classList.add('slide-in-left');
+            galeryImage.classList.add('animate-slideInLeft');
         }
+
+        galeryImage.src = '/images/galery/' + galery.image;
     }
 }
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async() => {
     if (arrows) {
         let currentIndex = 0;
         const img = await getImages();
-        renderImg(img[currentIndex]);
+        renderImg(img[currentIndex], "right");
 
         arrows.forEach(btn => {
             btn.addEventListener('click', (e) => {

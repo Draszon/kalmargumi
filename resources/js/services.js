@@ -13,10 +13,20 @@ async function getServices() {
 }
 
 //megjeleníti az aktuálisan választott szerviztevékenységet
-function renderServices(service) {
+function renderServices(service, direction = "right") {
     const title = document.getElementById("main-service-title");
     const content = document.getElementById("main-service-content");
     const image = document.getElementById("service-img");
+    const serviceWp = document.getElementById("service-wp");
+
+    serviceWp.classList.remove('animate-slideInRight', 'animate-slideInLeft');
+    void serviceWp.offsetWidth;
+
+    if (direction === "right") {
+        serviceWp.classList.add('animate-slideInRight');
+    } else {
+        serviceWp.classList.add('animate-slideInLeft');
+    }
 
     title.textContent = service.title;
     content.textContent = service.content;
@@ -34,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async() => {
         let currentIndex = 0;
 
         if (services.length > 0) {
-            renderServices(services[currentIndex]);
+            renderServices(services[currentIndex], "right");
         }
 
         serviceRight.addEventListener("click", () => {
@@ -42,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async() => {
             if (currentIndex >= services.length) {
                 currentIndex = 0;
             }
-            renderServices(services[currentIndex]);
+            renderServices(services[currentIndex], "right");
         });
 
         serviceLeft.addEventListener("click", () => {
@@ -50,7 +60,7 @@ document.addEventListener("DOMContentLoaded", async() => {
             if (currentIndex < 0) {
                 currentIndex = services.length -1;
             }
-            renderServices(services[currentIndex]);
+            renderServices(services[currentIndex], "left");
         });        
     }
 });

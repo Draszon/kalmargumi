@@ -14,6 +14,21 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+
+            keyframes: {
+                slideInRight: {
+                    '0%': { opacity: '0', transform: 'translateX(50%)' },
+                    '100%': { opacity: '1', transform: 'translateX(0)' }, 
+                },
+                slideInLeft: {
+                    '0%': { opacity: '0', transform: 'translateX(-50%)' },
+                    '100%': { opacity: '1', transform: 'translateX(0)' }, 
+                },
+            },
+            animation: {
+                slideInRight: 'slideInRight .5s ease-in-out forwards',
+                slideInLeft: 'slideInLeft .5s ease-in-out forwards',
+            },
         },
     },
 
