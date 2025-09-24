@@ -243,6 +243,7 @@ card-appear { animation: cardAppear 1s ease forwards; }
 }
 
 .goals-card {
+    width: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;

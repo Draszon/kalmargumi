@@ -43,11 +43,11 @@
 
             <nav class="desktop-menu">
                 <ul>
-                    <li class="nav-item desktop-nav-item"><a href="{{ route('home') }}">főoldal</a></li>
-                    <li class="nav-item desktop-nav-item"><a href="{{ route('services') }}">szolgáltatások</a></li>
-                    <li class="nav-item desktop-nav-item"><a href="{{ route('prices') }}">áraink</a></li>
-                    <li class="nav-item desktop-nav-item"><a href="{{ route('about') }}">rólunk</a></li>
-                    <li class="nav-item desktop-nav-item"><a href="{{ route('contact') }}">kapcsolat</a></li>
+                    <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a href="{{ route('home') }}">főoldal</a></li>
+                    <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a href="{{ route('services') }}">szolgáltatások</a></li>
+                    <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a href="{{ route('prices') }}">áraink</a></li>
+                    <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a href="{{ route('about') }}">rólunk</a></li>
+                    <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a href="{{ route('contact') }}">kapcsolat</a></li>
                 </ul>
             </nav>
         </div>        

@@ -27,6 +27,10 @@
                     <x-nav-link :href="route('prices.get')" :active="request()->routeIs('proces.edit')">
                         {{ __('Áraink') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                        {{ __('Weboldal') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -97,6 +101,10 @@
 
             <x-responsive-nav-link :href="route('prices.get')" :active="request()->routeIs('prices.get')">
                 {{ __('Árak') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                {{ __('Weboldal') }}
             </x-responsive-nav-link>
         </div>
 

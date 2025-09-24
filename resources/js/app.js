@@ -5,6 +5,7 @@ import './services.js';
 import './comments.js';
 import './galery.js';
 import './openings.js';
+import './yearsCou.js';
 
 import '../css/main.css';
 import '../css/homepage.css';

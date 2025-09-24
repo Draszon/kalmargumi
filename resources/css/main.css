@@ -140,6 +140,7 @@ a {
     position: absolute;
     top: 50px;
     transition: height .4s ease-out;
+    z-index: 1;
 }
 
 .mobile-nav-wrapper.open {

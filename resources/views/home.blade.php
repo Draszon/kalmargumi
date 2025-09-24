@@ -2,13 +2,15 @@
 
 @section('content')
 <section class="index-section-wrapper section">
-    <div id="service-wp" class="index-content">
-        <div class="section-img">
-            <img id="service-img" src="" alt="defekt">
-        </div>
-        <div>
-            <h2 class="home-service-title" id="main-service-title"></h2>
-            <p id="main-service-content"></p>
+    <div class="overflow-hidden">
+        <div id="service-wp" class="index-content">
+            <div class="section-img">
+                <img id="service-img" src="" alt="defekt">
+            </div>
+            <div>
+                <h2 class="home-service-title" id="main-service-title"></h2>
+                <p id="main-service-content"></p>
+            </div>
         </div>
     </div>
     <div class="index-arrows">
@@ -41,7 +43,7 @@
     </div>
 </section>
 
-<section class="galery-section-wrapper section">
+<section class="galery-section-wrapper section overflow-hidden">
     <div class="photoes-wrapper wrapper">
         <div class="section-img">
             <img id="galery-img" src="" alt="galéria képek" class="">
@@ -111,9 +113,11 @@
 <section class="aboutme-wrapper section">
     <div class="about-me-container wrapper">
         <h2 class="section-title">Rólunk mondták</h2>
-        <div id="comment-wp">
-            <p class="aboutme-text" id="comment-content"></p>
-            <p class="aboutme-writer" id="comment-author"></p>
+        <div class="overflow-hidden">
+            <div id="comment-wp">
+                <p class="aboutme-text" id="comment-content"></p>
+                <p class="aboutme-writer" id="comment-author"></p>
+            </div>
         </div>
     </div>
 </section>
@@ -121,15 +125,15 @@
 <section class="our-goals-wrapper section">
     <div class="our-goals-container wrapper">
         <div class="goals-card">
-            <p class="counter">80.000+</p>
+            <p class="counter" id="customers"></p>
             <p>Elégedett ügyfél</p>
         </div>
         <div class="goals-card middle-card">
-            <p class="counter">100.000+</p>
+            <p class="counter" id="repairs"></p>
             <p>Javítások száma</p>
         </div>
         <div class="goals-card">
-            <p class="counter">35 év</p>
+            <p class="counter" id="years"></p>
             <p>Szakmai tapasztalat</p>
         </div>
     </div>
