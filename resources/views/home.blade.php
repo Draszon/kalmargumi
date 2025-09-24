@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="index-section-wrapper section">
-    <div id="service-wp" class="animate-slideInRight animate-slideInLeft index-content">
+    <div id="service-wp" class="index-content">
         <div class="section-img">
             <img id="service-img" src="" alt="defekt">
         </div>
@@ -44,7 +44,7 @@
 <section class="galery-section-wrapper section">
     <div class="photoes-wrapper wrapper">
         <div class="section-img">
-            <img id="galery-img" src="" alt="galéria képek" class="animate-slideInRight animate-slideInLeft">
+            <img id="galery-img" src="" alt="galéria képek" class="">
         </div>
         <div class="galery-arrows">
             <img class="arrows galery-arrow" data-id="1" src="{{ asset("images/index_section/arrow-left.svg") }}" alt="nyilak">
@@ -111,8 +111,10 @@
 <section class="aboutme-wrapper section">
     <div class="about-me-container wrapper">
         <h2 class="section-title">Rólunk mondták</h2>
-        <p class="aboutme-text" id="comment-content"></p>
-        <p class="aboutme-writer" id="comment-author"></p>
+        <div id="comment-wp">
+            <p class="aboutme-text" id="comment-content"></p>
+            <p class="aboutme-writer" id="comment-author"></p>
+        </div>
     </div>
 </section>
 

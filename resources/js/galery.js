@@ -15,17 +15,23 @@ function renderImg(galery, direction = "right") {
     const galeryImage = document.getElementById('galery-img');
 
     if (galeryImage) {
-        galeryImage.classList.remove('animate-slideInRight', 'animate-slideInLeft');
-        void galeryImage.offsetWidth;
-        if (direction === "right") {
-            galeryImage.classList.add('animate-slideInRight');
-        } else {
-            galeryImage.classList.add('animate-slideInLeft');
-        }
+        galeryImage.classList.remove('animate-slideInRight', 'animate-slideInLeft', 'animate-fadeAwayLeft');
+        galeryImage.classList.add('animate-fadeAwayLeft');
 
-        galeryImage.src = '/images/galery/' + galery.image;
+        galeryImage.addEventListener('animationend', function handler() {
+            galeryImage.removeEventListener('animationend', handler);
+            galeryImage.src = '/images/galery/' + galery.image;
+            galeryImage.classList.remove('animate-fadeAwayLeft');
+
+            if (direction === "right") {
+                galeryImage.classList.add('animate-slideInRight');
+            } else {
+                galeryImage.classList.add('animate-slideInLeft');
+            }
+        });
     }
 }
+
 
 document.addEventListener("DOMContentLoaded", async() => {
     const arrows = document.querySelectorAll('.galery-arrow');

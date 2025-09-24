@@ -14,11 +14,20 @@ async function getComments() {
 function renderComment(comment) {
     const content = document.getElementById("comment-content");
     const author = document.getElementById("comment-author");
+    const commentWp = document.getElementById("comment-wp");
 
-    
+    if (commentWp) {
+        commentWp.classList.remove('animate-slideInRight', 'animate-fadeAwayLeft');
+        commentWp.classList.add('animate-fadeAwayLeft');
 
-    content.textContent = comment.comment;
-    author.textContent = comment.author;
+        commentWp.addEventListener('animationend', function handler() {
+            commentWp.removeEventListener('animationend', handler);
+            commentWp.classList.remove('animate-fadeAwayLeft');
+            content.textContent = comment.comment;
+            author.textContent = comment.author;
+            commentWp.classList.add('animate-slideInRight');
+        });
+    }
 }
 
 document.addEventListener("DOMContentLoaded", async() => {
