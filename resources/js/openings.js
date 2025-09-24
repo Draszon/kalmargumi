@@ -1,4 +1,4 @@
-"user strict";
+"use strict";
 
 async function getOpening() {
     try {

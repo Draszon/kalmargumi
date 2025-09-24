@@ -1,4 +1,4 @@
-"user strict";
+"use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
     //footer évszám megjelenítése

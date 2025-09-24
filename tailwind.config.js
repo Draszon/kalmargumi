@@ -24,10 +24,15 @@ export default {
                     '0%': { opacity: '0', transform: 'translateX(-50%)' },
                     '100%': { opacity: '1', transform: 'translateX(0)' }, 
                 },
+                fadeAwayLeft: {
+                    '0%': { opacity: '1', transform: 'translateX(0)' },
+                    '100%': { opacity: '0', transform: 'translateX(-50%)' },
+                }
             },
             animation: {
                 slideInRight: 'slideInRight .5s ease-in-out forwards',
                 slideInLeft: 'slideInLeft .5s ease-in-out forwards',
+                fadeAwayLeft: 'fadeAwayLeft .5s ease-in-out forwards',
             },
         },
     },

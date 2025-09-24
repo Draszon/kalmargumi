@@ -1,4 +1,4 @@
-"user strict";
+"use strict";
 
 async function getComments() {
     try {
@@ -14,6 +14,8 @@ async function getComments() {
 function renderComment(comment) {
     const content = document.getElementById("comment-content");
     const author = document.getElementById("comment-author");
+
+    
 
     content.textContent = comment.comment;
     author.textContent = comment.author;

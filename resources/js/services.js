@@ -1,4 +1,4 @@
-"user strict";
+"use strict";
 
 //http kéréssel betölti az adatokat az adatbázisból
 async function getServices() {
