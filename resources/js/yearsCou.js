@@ -15,7 +15,7 @@ function render(data, type) {
             repairs.textContent = formatted + "+";
             break;
         case "year":
-            years.textContent = formatted;
+            years.textContent = formatted + "év";
             break;
         default:
             console.log("Valami hiba történt!");
