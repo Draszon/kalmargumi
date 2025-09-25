@@ -20,15 +20,26 @@ function renderImg(galery, direction = "right") {
 
         galeryImage.addEventListener('animationend', function handler() {
             galeryImage.removeEventListener('animationend', handler);
-            galeryImage.src = '/images/galery/' + galery.image;
-            galeryImage.classList.remove('animate-fadeAwayLeft');
 
-            if (direction === "right") {
-                galeryImage.classList.add('animate-slideInRight');
-            } else {
-                galeryImage.classList.add('animate-slideInLeft');
-            }
-        });
+            // új kép előtöltése egy külön Image objektumba
+            const newImg = new Image();
+            newImg.src = '/images/galery/' + galery.image;
+
+            newImg.onload = () => {
+                // ha betöltött, lecseréljük a src-t
+                galeryImage.src = newImg.src;
+
+                // fade out class törlése
+                galeryImage.classList.remove('animate-fadeAwayLeft');
+
+                // és ekkor indítjuk a slide in-t
+                if (direction === "right") {
+                    galeryImage.classList.add('animate-slideInRight');
+                } else {
+                    galeryImage.classList.add('animate-slideInLeft');
+                }
+            };
+        }, { once: true });
     }
 }
 
