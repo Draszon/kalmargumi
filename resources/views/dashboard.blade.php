@@ -134,9 +134,15 @@
                             @method('PUT')
 
                             <div class="my-4">
-                                <input type="text" name="value" value="{{ $contact->value }}" class="mb-2 md:mb-0 w-64 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                                <input type="text" name="value" value="{{ $contact->value }}" class="
+                                    mb-2 md:mb-0 w-64 px-4 py-2 border border-gray-300 rounded-lg 
+                                    shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 
+                                    focus:border-blue-500 transition duration-200">
                             </div>
-                            <button type="submit" class="w-40 mt-5 px-5 py-2 bg-gray-200 text-black hover:text-white font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Módosít</button>
+                            <button type="submit" class="
+                                w-40 mt-5 px-5 py-2 bg-gray-200 text-black hover:text-white font-medium 
+                                rounded-lg shadow hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 
+                                focus:ring-offset-2 transition duration-200">Módosít</button>
                         </form>
                     @endforeach
                     @if (session('successContact'))

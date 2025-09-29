@@ -10,7 +10,7 @@ class editContactController extends Controller
 {
     public function editContact(Request $request, $id) {
         $validated = $request->validate([
-            'name' => 'required',
+            'value' => 'required',
         ]);
 
         try {
