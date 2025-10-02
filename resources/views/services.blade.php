@@ -28,8 +28,11 @@
     </div>
 
     <div class="booking-wrapper">
-        <div class="booking">
-            <a href="http://idopontfoglalas.gumiszervizem.hu/booking/65" target="_blank">foglaljon időpontot most!</a>
+        <div class="flex flex-col items-center">
+            <a href="http://idopontfoglalas.gumiszervizem.hu/booking/65" class="date-text" target="_blank">Foglaljon időpontot kényelmesen online!</a>
+            <a href="http://idopontfoglalas.gumiszervizem.hu/booking/65" target="_blank">
+                <img src="{{ asset('images/point-s.png') }}" alt="PointS logó">
+            </a>
         </div>
     </div>
 </section>

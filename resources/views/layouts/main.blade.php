@@ -30,11 +30,7 @@
     <div class="nav-section">
         <div class="header-navigation-wrapper">
             <div class="nav-logo">
-                <img class="logo-image" src="{{ asset('images/nav_icons/tire_logo.png') }}" alt="logó gumi">
-                <div class="logo-title">
-                    <p class="logo-main-title nunito-sans-title-font">Kalmár</p>
-                    <p class="logo-title nunito-sans-title-font">Gumiszerviz Kft</p>
-                </div>
+                <img class="logo-image" src="{{ asset('images/nav_icons/logo.png') }}" alt="logó gumi">
             </div>
 
             <div class="hamburger-icon">
@@ -46,6 +42,7 @@
                     <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a href="{{ route('home') }}">főoldal</a></li>
                     <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a href="{{ route('services') }}">szolgáltatások</a></li>
                     <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a href="{{ route('prices') }}">áraink</a></li>
+                    <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a target="_blank" href="https://autogumiexpo.hu">webáruház</a></li>
                     <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a href="{{ route('about') }}">rólunk</a></li>
                     <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a href="{{ route('contact') }}">kapcsolat</a></li>
                 </ul>
@@ -58,6 +55,7 @@
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/home.svg') }}" alt="home button img"><a href="{{ route('home') }}">főoldal</a></li>
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/services.svg') }}" alt=""><a href="{{ route('services') }}">szolgáltatások</a></li>
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/price.svg') }}" alt=""><a href="{{ route('prices') }}">áraink</a></li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/price.svg') }}" alt=""><a target="_blank" href="https://autogumiexpo.hu" href="{{ route('prices') }}">webáruház</a></li>
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/aboutme.svg') }}" alt=""><a href="{{ route('about') }}">rólunk</a></li>
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/contact.svg') }}" alt=""><a href="{{ route('contact') }}">kapcsolat</a></li>
         </ul>
