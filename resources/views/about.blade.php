@@ -18,9 +18,9 @@
 
     <div class="content-wrapper wrapper">
         <div class="images containers">
-            <img class="aboutme-photoes right" src="{{ asset('images/galery/galery1.jpg') }}" alt="rólunk képek">
-            <img class="aboutme-photoes left" src="{{ asset('images/galery/galery2.jpg') }}" alt="rólunk képek">
-            <img class="aboutme-photoes right" src="{{ asset('images/galery/galery3.jpg') }}" alt="rólunk képek">
+            <img class="aboutme-photoes right" src="{{ asset('images/about_img/galery1.jpg') }}" alt="rólunk képek">
+            <img class="aboutme-photoes left" src="{{ asset('images/about_img/galery2.jpg') }}" alt="rólunk képek">
+            <img class="aboutme-photoes right" src="{{ asset('images/about_img/galery3.jpg') }}" alt="rólunk képek">
         </div>
 
         <div class="text-container containers">
