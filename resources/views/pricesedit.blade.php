@@ -94,7 +94,7 @@
                     <form action="{{ route('service.store') }}" method="post" class="flex flex-col mb-5">
                         @csrf
                         @method('PUT')
-                        <p>Új szolgáltatás feltöltése a kiválasztott kategóriához</p>
+                        <p>Feltöltés a kiválasztott kategóriához</p>
                         <select name="category_id" class="
                             w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
                             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
@@ -103,7 +103,16 @@
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
-                        <p>Új szolgáltatás neve</p>
+                        <p>Feltöltés a kiválasztott szolgáltatáshoz:</p>
+                        <select name="category_id" class="
+                            w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
+                            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                            transition duration-200">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                        <p>Név</p>
                         <input type="text" name="name" class="
                             w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
                             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500

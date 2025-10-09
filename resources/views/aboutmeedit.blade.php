@@ -34,6 +34,35 @@
                         </form>
                     @endforeach
                 </div>
+
+                <div class="flex flex-wrap gap-5 p-6">
+                    @foreach ($aboutPhotos as $aboutPhoto)
+                        <form action="{{ route('aboutPhoto.delete', $aboutPhoto->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <div class="w-72">
+                                <img src="{{ asset('images/about_photos/' . $aboutPhoto->path) }}" alt="képek rólunk">
+                            </div>
+                            <button type="submit" class="
+                                w-40 px-5 py-2 mt-8 bg-gray-200 text-black hover:text-white 
+                                font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none
+                                focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Törlés</button>
+                        </form>
+                    @endforeach
+                </div>
+
+                <div class="my-10 p-6">
+                    <p class="text-red-500">A szép kinézet megörzése érdekében max 3 képet érdemes feltölteni!</p>
+                    <p class="font-bold my-5">Új kép feltöltése</p>
+                    <form  action="{{ route('aboutPhoto.store') }}" method="post" class="flex flex-col" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="aboutP">
+                        <button type="submit" class="
+                            w-40 px-5 py-2 mt-8 bg-gray-200 text-black hover:text-white 
+                            font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none
+                            focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Feltölt</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
