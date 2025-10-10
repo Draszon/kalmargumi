@@ -10,6 +10,7 @@ class Category extends Model
     protected $fillable = ['name'];
 
     public function wheelsService():HasMany {
-        return $this->hasMany(WheelService::class, 'category_id', 'id');
+        return $this->hasMany(WheelService::class, 'category_id', 'id')
+            ->orderBy('order', 'asc');
     }
 }

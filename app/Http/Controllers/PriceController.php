@@ -12,4 +12,8 @@ class PriceController extends Controller
 
         return view('prices', compact('categories'));
     }
+
+    public function reorder() {
+        //
+    }
 }

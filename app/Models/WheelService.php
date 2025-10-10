@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class WheelService extends Model
 {
-    protected $fillable = ['category_id', 'name', 'price', 'unit'];
+    protected $fillable = ['category_id', 'order', 'name', 'price', 'unit'];
 
     public function category(): BelongsTo {
         return $this->belongsTo(Category::class, 'category_id', 'id');
