@@ -30,7 +30,7 @@ Route::get('/getopenings', [HomeController::class, 'getOpenings']);
 
 //bejelentkezett felhasználók tekinthetik meg az oldalakat
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::put('/price-order/{id}', [PriceController::class, 'reorder'])->name('price.reorder');
+    Route::put('/price-order', [EditPriceController::class, 'reorder'])->name('price.reorder');
 
     Route::delete('/about-photo-delete/{id}', [EditAboutController::class, 'aboutPhotosDelete'])->name('aboutPhoto.delete');
     Route::post('/about-photo-store', [EditAboutController::class, 'aboutPhotosStore'])->name('aboutPhoto.store');

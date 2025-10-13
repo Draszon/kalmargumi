@@ -12,7 +12,8 @@ class EditPriceController extends Controller
     public function getPrices () {
         $categories = Category::all();
         $wheelServices = WheelService::all();
-        return view('pricesedit', compact('categories', 'wheelServices'));
+        $orderedCategories = Category::with('wheelsService')->get();
+        return view('pricesedit', compact('categories', 'wheelServices', 'orderedCategories'));
     }
 
     public function editCategory (Request $request) {
@@ -108,6 +109,22 @@ class EditPriceController extends Controller
         } catch (\Exception $e) {
             return back()->withErrors([
                 'errorServiceDelete' => 'Hiba a szerviz törlése közben: ' . $e->getMessage(),
+            ])->withInput();
+        }
+    }
+
+    public function reorder(Request $request) {
+        try {
+            foreach ($request->serviceOrders as $serviceOrder) {
+                $service = WheelService::find($serviceOrder['id']);
+                $service->update([
+                    'order' => $serviceOrder['order'],
+                ]);
+            }
+            return back()->with('successReorder', 'Sikeres sorrend módosítás!');
+        } catch (\Exception $e) {
+            return back()->withErrors([
+                'errorServiceReorder' => 'Hiba a sorrend módosítása közben: ' . $e->getMessage(),
             ])->withInput();
         }
     }

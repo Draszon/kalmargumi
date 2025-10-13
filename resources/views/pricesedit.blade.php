@@ -103,15 +103,7 @@
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
-                        <p>Feltöltés a kiválasztott szolgáltatáshoz:</p>
-                        <select name="category_id" class="
-                            w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
-                            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-                            transition duration-200">
-                            @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                            @endforeach
-                        </select>
+
                         <p>Név</p>
                         <input type="text" name="name" class="
                             w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
@@ -173,10 +165,38 @@
                         </div>                         
                         @endforeach
                         <button class="
-                                w-40 px-5 py-2 mb-5 mt-2 bg-gray-200 text-black hover:text-white 
-                                font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none
-                                focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Módosítás</button>
+                            w-40 px-5 py-2 mb-5 mt-2 bg-gray-200 text-black hover:text-white 
+                            font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none
+                            focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Módosítás</button>
                     </form>
+
+                    <p class="mt-10 mb-5">Sorrend módosítása:</p>
+                    
+                    <form action="{{ route('price.reorder') }}" method="post">
+                        @csrf
+                        @method('PUT')
+                        @foreach ($orderedCategories as $orderedCategory)
+                            <div class="rim-fitting-container">
+                                <div class="title-container">
+                                    <h4 class="prices-table-title">{{ $orderedCategory->name }}</h4>
+                                </div>
+                            
+                                @foreach ($orderedCategory->wheelsService as $services)
+                                    <div class="prices-row">
+                                        <input type="hidden" name="serviceOrders[{{ $services->id }}][id]" value="{{ $services->id }}">
+                                        <input type="text" name="serviceOrders[{{ $services->id }}][order]" value="{{ $services->order }}" class="max-w-24">
+                                        <p class="services-name">{{ $services->name }}</p>
+                                        <p class="services-prices">{{ $services->price . ' ' . $services->unit }}</p>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endforeach
+                        <button class="
+                            w-40 px-5 py-2 mb-5 mt-2 bg-gray-200 text-black hover:text-white 
+                            font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none
+                            focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Módosítás</button>                        
+                    </form>
+                    
                 </div>
             </div>
         </div>
