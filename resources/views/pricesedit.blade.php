@@ -172,11 +172,15 @@
 
                     <p class="mt-10 mb-5">Sorrend módosítása:</p>
                     
-                    <form action="{{ route('price.reorder') }}" method="post">
+                    <form class="wrapper prices-wrapper" action="{{ route('price.reorder') }}" method="post">
+                        @if (session('successReorder'))
+                            <p class="text-green-800 font-medium">{{ session('successReorder') }}</p>
+                        @endif
+
                         @csrf
                         @method('PUT')
                         @foreach ($orderedCategories as $orderedCategory)
-                            <div class="rim-fitting-container">
+                            <div class="rim-fitting-container w-96">
                                 <div class="title-container">
                                     <h4 class="prices-table-title">{{ $orderedCategory->name }}</h4>
                                 </div>
@@ -186,7 +190,7 @@
                                         <input type="hidden" name="serviceOrders[{{ $services->id }}][id]" value="{{ $services->id }}">
                                         <input type="text" name="serviceOrders[{{ $services->id }}][order]" value="{{ $services->order }}" class="max-w-24">
                                         <p class="services-name">{{ $services->name }}</p>
-                                        <p class="services-prices">{{ $services->price . ' ' . $services->unit }}</p>
+                                        <!--<p class="services-prices">{{ $services->price . ' ' . $services->unit }}</p>-->
                                     </div>
                                 @endforeach
                             </div>
