@@ -11,8 +11,8 @@
     <meta property="og:title" content="Kalmár Gumiszerviz Kft – Eger">
     <meta property="og:description" content="Gyors és profi gumiabroncs csere, centrírozás és szerviz Egerbe a Kalmár Gumiszerviz Kft-nél.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.kalmargumi.hu">
-    <meta property="og:image" content="https://www.kalmargumi.hu/images/cover.jpg">
+    <meta property="og:url" content="https://www.gumikalmar.hu">
+    <meta property="og:image" content="https://www.gumikalmar.hu/images/services/defekt.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
