@@ -23,7 +23,9 @@ class GaleryController extends Controller
     public function deleteImage($id) {
         $image = Galery::findOrFail($id);
         
-        $imagePath = public_path('images/galery/' . $image->image);
+        $basePath = rtrim(env('PUBLIC_PATH', public_path('images')), '/');
+        $imagePath = $basePath . '/galery/' . $image->image;
+        //$imagePath = public_path('images/galery/' . $image->image);
         if (file_exists($imagePath)) {
             unlink($imagePath);
         }
@@ -38,7 +40,10 @@ class GaleryController extends Controller
 
         $file = $request->file('galery-img');
         $filename = $file->getClientOriginalName();
-        $file->move(public_path('images/galery'), $filename);
+
+        $destinationPath = rtrim(env('PUBLIC_PATH', public_path('images')), '/') . '/galery';
+        $file->move($destinationPath, $filename);
+        //$file->move(public_path('images/galery'), $filename);
 
         Galery::create(['image' => $filename]);
         return back()->with('success', 'Sikeres képfeltöltés!');

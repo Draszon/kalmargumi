@@ -34,7 +34,9 @@ class EditAboutController extends Controller
     public function aboutPhotosDelete($id) {
         $photo = About_photo::findOrFail($id);
 
-        $imagePath = public_path('images/about_photos/' . $photo->path);
+        $basePath = rtrim(env('PUBLIC_PATH', public_path('images')), '/');
+        $imagePath = $basePath . '/about_photos/' . $photo->path;
+        //$imagePath = public_path('images/about_photos/' . $photo->path);
         if (file_exists($imagePath)) {
             unlink($imagePath);
         }
@@ -49,7 +51,10 @@ class EditAboutController extends Controller
 
         $file = $request->file('aboutP');
         $filename = $file->getClientOriginalName();
-        $file->move(public_path('images/about_photos'), $filename);
+
+        $destinationPath = rtrim(env('PUBLIC_PATH', public_path('images')), '/') . '/about_photos';
+        $file->move($destinationPath, $filename);
+        //$file->move(public_path('images/about_photos'), $filename);
 
         About_photo::create(['path' => $filename]);
         return back()->with('successStorePhoto', 'Sikeres képfeltöltés!');
