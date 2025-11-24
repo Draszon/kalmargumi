@@ -44,6 +44,7 @@
                     <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a href="{{ route('prices') }}">áraink</a></li>
                     <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a target="_blank" href="https://autogumiexpo.hu">webáruház</a></li>
                     <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a href="{{ route('about') }}">rólunk</a></li>
+                    <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a href="http://idopontfoglalas.gumiszervizem.hu/booking/65">időpontok</a></li>
                     <li class="nav-item desktop-nav-item hover:border-b-2 border-solid border-slate-400"><a href="{{ route('contact') }}">kapcsolat</a></li>
                 </ul>
             </nav>
@@ -57,6 +58,7 @@
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/price.svg') }}" alt=""><a href="{{ route('prices') }}">áraink</a></li>
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/price.svg') }}" alt=""><a target="_blank" href="https://autogumiexpo.hu" href="{{ route('prices') }}">webáruház</a></li>
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/aboutme.svg') }}" alt=""><a href="{{ route('about') }}">rólunk</a></li>
+            <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/aboutme.svg') }}" alt=""><a href="http://idopontfoglalas.gumiszervizem.hu/booking/65">időpontok</a></li>
             <li class="nav-item nav-border nav-toggleopen"><img class="mobile-menu-icon" src="{{ asset('images/nav_icons/contact.svg') }}" alt=""><a href="{{ route('contact') }}">kapcsolat</a></li>
         </ul>
     </nav>

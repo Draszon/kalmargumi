@@ -143,7 +143,7 @@ a {
 }
 
 .mobile-nav-wrapper.open {
-    height: 350px;
+    height: 430px;
     transition: height .4s ease-in;
     border-bottom: 2px solid rgba(0, 0, 0, 0.182);
     border-radius: 0 0 20px 20px;
