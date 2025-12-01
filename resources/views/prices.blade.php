@@ -32,8 +32,8 @@
 
         <div class="service-info-container">
             <p>A nálunk vásárolt gumiabroncsnál a hulladékkezelési költséget nem számoljuk fel. Áraink az ÁFA-t tartalmazzák!</p>
-            <!--<p>A szerelés ára a szelepet nem tartalmazza!</p>-->
-            <p>A szerelés ára a felhasznált súlyokat nem tartalmazza!</p>
+            <p>A szerelés ára a szelepet nem tartalmazza!</p>
+            <p>A szerelés ára a felhasznált súlyokat tartalmazza!</p>
         </div>
     </div>
 </section>
