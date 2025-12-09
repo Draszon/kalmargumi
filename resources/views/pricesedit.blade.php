@@ -43,9 +43,9 @@
                         </form>
 
                         <form action="{{ route('category.edit') }}" method="post" class="flex flex-col mb-5">
+                            @csrf
+                            @method('PUT')
                             @foreach ($categories as $category)
-                                @csrf
-                                @method('PUT')
                                 <input type="hidden" name="categories[{{ $category->id }}][id]" value="{{ $category->id }}">
                                 <input type="text" name="categories[{{ $category->id }}][name]" class="
                                     w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
@@ -144,6 +144,28 @@
                             w-40 px-5 py-2 mb-5 mt-2 bg-gray-200 text-black hover:text-white 
                             font-medium rounded-lg shadow hover:bg-red-600 focus:outline-none
                             focus:ring-2 focus:ring-red-400 focus:ring-offset-2 transition duration-200">Törlés</button>
+                    </form>
+
+                    <p>Szerviztevékenység átnevezése:</p>
+                    <form action="{{ route('wheelServiceName.edit') }}" method="post" class="flex flex-col md:flex-row flex-wrap my-5">
+                        @csrf
+                        @method('PUT')
+                        
+                        @if (session('successServiceNameEdit'))
+                            <p class="text-green-800 font-medium">{{ session('successServiceNameEdit') }}</p>
+                        @endif
+                        
+                        @foreach ($wheelServices as $wheelService)
+                            <input type="hidden" name="serviceNames[{{ $wheelService->id }}][id]" value="{{ $wheelService->id }}">
+                            <input type="text" name="serviceNames[{{ $wheelService->id }}][name]" class="
+                                w-64 px-4 py-2 mb-2 border border-gray-300 rounded-lg shadow-sm
+                                focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                                transition duration-200 mx-2" value="{{ $wheelService->name }}" >
+                        @endforeach
+                        <button class="
+                            w-40 px-5 py-2 mb-5 mt-2 bg-gray-200 text-black hover:text-white 
+                            font-medium rounded-lg shadow hover:bg-gray-600 focus:outline-none
+                            focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200">Módosítás</button>
                     </form>
                     
                     <p>Árak módosítása:</p>

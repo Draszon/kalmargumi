@@ -12,7 +12,6 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\ProfileController;
-use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
@@ -40,6 +39,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('/store-service', [EditPriceController::class, 'storeService'])->name('service.store');
     Route::put('/update-service', [EditPriceController::class, 'editService'])->name('wheelService.edit');
     Route::delete('/delete-service', [EditPriceController::class, 'deleteService'])->name('service.delete');
+    Route::put('/update-service-name', [EditPriceController::class, 'editServiceName'])->name('wheelServiceName.edit');
 
     Route::delete('/delete-category', [EditPriceController::class, 'destroySelected'])->name('destroy.category');
     Route::put('/edit-aboutme/{id}', [EditAboutController::class, 'editAbout'])->name('aboutmes.edit');

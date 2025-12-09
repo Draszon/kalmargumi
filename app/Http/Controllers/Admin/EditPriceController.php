@@ -100,6 +100,22 @@ class EditPriceController extends Controller
         }
     }
 
+    public function editServiceName (Request $request) {
+        try {
+            foreach ($request->serviceNames as $serviceName) {
+                $service = WheelService::find($serviceName['id']);
+                $service->update([
+                    'name' => $serviceName['name'],
+                ]);
+            }
+            return back()->with('successServiceNameEdit', 'Sikeres névváltoztatás!');
+        } catch (\Exception $e) {
+            return back()->withErrors([
+                'errorServiceNameEdit' => 'Hiba a név szerkesztése közben: ', $e->getMessage(),
+            ]);
+        }
+    }
+
     public function deleteService (Request $request) {
         $ids = $request->input('deleteService', []);
 
